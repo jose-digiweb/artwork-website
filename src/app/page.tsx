@@ -12,8 +12,8 @@ export default function Home() {
         <div className='w-full flex flex-col'>
           <span className='text-2xl font-bold'>
             Discover stunning abstract paintings, by BangeYhodhy, a talented artist from
-            Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and
-            each one is a work of art.
+            Guinea Bissau, based in Rotterdam. Each piece is unique, and each one is a
+            work of art.
           </span>
         </div>
 
