@@ -1,6 +1,5 @@
 // Components
 import { AppHeader } from '@/components/header';
-import { MobileNavigation } from '@/components/header/navigation/MobileNavigation';
 import { AppHero, BackgroundImage } from '@/components/home';
 
 /**
@@ -16,7 +15,6 @@ export default function HomePage() {
         <AppHeader className='max-w-screen-lg mx-auto h-header' />
       </div>
       <main className='z-10 flex flex-col gap-2 w-full h-full max-w-screen-lg mx-auto'>
-        <MobileNavigation />
         <AppHero className='h-hero px-4' />
       </main>
     </div>
