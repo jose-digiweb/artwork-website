@@ -1,5 +1,3 @@
-'use client';
-
 // Components
 import {
   Sheet,
@@ -9,9 +7,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { cn } from '@/lib/utils';
 import { MenuIcon } from 'lucide-react';
 import { MainNavigation } from './MainNavigation';
+import { Button } from '@/components/ui/button';
 
 // Types
 type Props = {
@@ -26,8 +24,10 @@ type Props = {
 export const MobileNavigation = ({ className }: Props) => {
   return (
     <Sheet>
-      <SheetTrigger className={cn('', className)}>
-        <MenuIcon />
+      <SheetTrigger className={className} asChild>
+        <Button variant='outline' size='icon'>
+          <MenuIcon size={24} />
+        </Button>
       </SheetTrigger>
       <SheetContent className='bg-background/70 border-none backdrop-blur-sm'>
         <SheetHeader className='sr-only'>
