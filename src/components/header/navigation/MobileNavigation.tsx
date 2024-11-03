@@ -1,3 +1,5 @@
+'use client';
+
 // Components
 import {
   Sheet,
@@ -9,7 +11,7 @@ import {
 } from '@/components/ui/sheet';
 import { MenuIcon } from 'lucide-react';
 import { MainNavigation } from './MainNavigation';
-import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 // Types
 type Props = {
@@ -22,12 +24,14 @@ type Props = {
  * @returns The MobileNavigation component
  */
 export const MobileNavigation = ({ className }: Props) => {
+  const [open, setOpen] = useState(false);
+
+  console.log({ open });
+
   return (
-    <Sheet>
-      <SheetTrigger className={className} asChild>
-        <Button variant='outline' size='icon'>
-          <MenuIcon size={24} />
-        </Button>
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger className={className}>
+        <MenuIcon size={24} />
       </SheetTrigger>
       <SheetContent className='bg-background/70 border-none backdrop-blur-sm'>
         <SheetHeader className='sr-only'>
