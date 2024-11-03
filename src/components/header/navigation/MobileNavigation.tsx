@@ -22,7 +22,7 @@ type Props = {
  */
 export const MobileNavigation = ({ className }: Props) => {
   return (
-    <Sheet open>
+    <Sheet>
       <SheetTrigger className={className}>
         <MenuIcon size={24} />
       </SheetTrigger>
