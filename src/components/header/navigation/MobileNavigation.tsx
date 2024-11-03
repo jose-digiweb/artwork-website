@@ -12,6 +12,7 @@ import {
 import { MenuIcon } from 'lucide-react';
 import { MainNavigation } from './MainNavigation';
 import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 
 // Types
 type Props = {
@@ -26,12 +27,12 @@ type Props = {
 export const MobileNavigation = ({ className }: Props) => {
   const [open, setOpen] = useState(false);
 
-  console.log({ open });
-
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger className={className}>
-        <MenuIcon size={24} />
+      <SheetTrigger className={className} asChild>
+        <Button variant='outline' size='icon' onClick={() => setOpen(!open)}>
+          <MenuIcon size={24} />
+        </Button>
       </SheetTrigger>
       <SheetContent className='bg-background/70 border-none backdrop-blur-sm'>
         <SheetHeader className='sr-only'>
