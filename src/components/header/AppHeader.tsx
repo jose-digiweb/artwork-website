@@ -1,6 +1,7 @@
 // Components
 import { cn } from '@/lib/utils';
 import { AppNavigation } from './navigation';
+import Link from 'next/link';
 
 // Types
 type Props = {
@@ -15,7 +16,9 @@ type Props = {
 export const AppHeader = ({ className }: Props) => {
   return (
     <header className={cn('w-full flex items-center justify-between', className)}>
-      <h1 className='text-2xl font-bold text-primary'>BangeYhodhy</h1>
+      <Link href='/' className='text-2xl font-bold text-primary'>
+        BangeYhodhy
+      </Link>
 
       <AppNavigation />
     </header>

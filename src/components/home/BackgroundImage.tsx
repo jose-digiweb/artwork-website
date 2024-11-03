@@ -12,12 +12,12 @@ export function BackgroundImage() {
       <CloudinaryImage
         fill
         crop='fill'
-        sizes='100vw'
+        sizes='100vw 100vh'
         alt='BangeYhodhy'
-        src='cld-sample.jpg'
+        src='canva-1_o5i5e9.png'
         className='absolute object-cover z-0'
       />
-      <div className='absolute inset-0 bg-background/80 z-10' />
+      <div className='absolute inset-0 bg-background/70 z-10' />
     </div>
   );
 }

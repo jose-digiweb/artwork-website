@@ -10,9 +10,9 @@ import Link from 'next/link';
 // The navigation links
 export const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/#', label: 'About' },
+  { href: '/#', label: 'Gallery' },
+  { href: '/#', label: 'Contact' },
 ] as const;
 
 // Types
@@ -36,9 +36,9 @@ export const MainNavigation = ({ className }: Props) => {
   // Render the navigation links
   return (
     <nav className={cn('flex items-center gap-4', className)}>
-      {navLinks.map(nav => (
+      {navLinks.map((nav, index) => (
         <Link
-          key={nav.href}
+          key={index}
           href={nav.href}
           className={cn('hover:text-primary', {
             'text-primary': isActive(nav),

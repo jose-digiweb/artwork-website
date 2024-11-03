@@ -1,6 +1,9 @@
 // Dependencies
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+
+// Components
+import { CloudinaryImage } from '@/components/cloudinary';
+import { Button } from '@/components/ui/button';
 
 // Types
 type Props = {
@@ -15,12 +18,12 @@ type Props = {
  */
 export const AppHero = ({ className }: Props) => {
   return (
-    <section className={cn('flex flex-col items-start gap-12 justify-center', className)}>
-      <div className='flex flex-col gap-4 max-w-lg'>
-        <p className='text-pretty font-bold text-3xl sm:text-4xl'>
+    <section className={cn('flex items-center justify-between', className)}>
+      <div className='flex flex-col gap-2 max-w-lg items-start'>
+        <h1 className='text-pretty font-bold text-3xl sm:text-4xl mb-4'>
           Hi, I’m <span className='text-primary'>Bange Yhodhy</span>, <br /> and I love to
           create abstract paintings.
-        </p>
+        </h1>
         <p className='text-pretty text-lg'>
           My artwork is a vibrant exploration of color, form, and texture. <br /> I draw
           inspiration from my surroundings, my emotions, and my innermost thoughts.
@@ -28,9 +31,22 @@ export const AppHero = ({ className }: Props) => {
         <p className='text-pretty text-lg'>
           Each piece is a unique journey into the depths of the human imagination.
         </p>
+
+        <div className='flex items-center gap-4 mt-6'>
+          <Button>View Gallery</Button>
+          <Button variant='outline'>Gent in Touch</Button>
+        </div>
       </div>
 
-      <Button>View Gallery</Button>
+      <div className='sm:flex relative w-96 overflow-hidden hidden'>
+        <CloudinaryImage
+          width={300}
+          height={600}
+          alt='BangeYhodhy'
+          src='bange-frame_un1jxc.png'
+          className='w-full h-full object-contain'
+        />
+      </div>
     </section>
   );
 };
