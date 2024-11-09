@@ -3,7 +3,7 @@ import { AppHeader } from '@/components/header';
 
 export const HeroSection = () => {
   return (
-    <section className='w-full relative h-full flex flex-col overflow-x-hidden px-4'>
+    <section className='w-full relative h-full flex flex-col overflow-x-hidden px-4 '>
       <AppHeader className='sticky top-0 z-50 bg-white/80 backdrop-blur-md px-0' />
 
       <section className='w-full flex flex-col'>
@@ -37,7 +37,7 @@ export const HeroSection = () => {
             width={200}
             height={300}
             alt='BangeYhodhy'
-            src='canvas-portrait-women_pet6fe.jpg'
+            src='canva-portrait-reds_bmpsso.jpg'
             className='w-full h-full object-cover rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] sm:hover:scale-110 sm:scale-100 scale-110 sm:hover:-rotate-3 -rotate-3 transition-all duration-500 cursor-pointer shrink-0 sm:rotate-0'
           />
         </div>
@@ -50,7 +50,7 @@ export const HeroSection = () => {
             className='w-full h-full object-cover rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] sm:hover:scale-110 scale-110 sm:hover:rotate-3 rotate-3 transition-all duration-500 cursor-pointer shrink-0 sm:scale-100 sm:rotate-0'
           />
         </div>
-        <div className='sm:h-[500px] w-[300px] h-[400px] flex shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
+        <div className='sm:h-[500px] sm:w-[350px] w-[300px] h-[400px] flex shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
           <CloudinaryImage
             width={500}
             height={600}
@@ -73,7 +73,7 @@ export const HeroSection = () => {
             width={200}
             height={300}
             alt='BangeYhodhy'
-            src='canva-portrait_wcmdc6.png'
+            src='canva-portrait-green_j8diub.jpg'
             className='w-full h-full object-cover sm:hover:scale-110 scale-110 sm:hover:-rotate-3 -rotate-3 sm:scale-100 sm:rotate-0 transition-all duration-500 cursor-pointer shrink-0 grow-0 rounded-sm'
           />
         </div>
