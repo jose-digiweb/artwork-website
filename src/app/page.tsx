@@ -10,6 +10,7 @@ import { HeroSection } from '@/components/home';
 export default function HomePage() {
   return (
     <main className='flex flex-col w-full h-full overflow-y-auto items-center'>
+      <div className='absolute inset-0 z-0 bg-gradient-to-br from-primary/10 to-primary/10 via-primary/50 blur-3xl' />
       <HeroSection />
     </main>
   );

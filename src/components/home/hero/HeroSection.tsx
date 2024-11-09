@@ -3,8 +3,8 @@ import { AppHeader } from '@/components/header';
 
 export const HeroSection = () => {
   return (
-    <section className='w-full relative h-full flex flex-col overflow-x-hidden px-4 '>
-      <AppHeader className='sticky top-0 z-50 bg-white/80 backdrop-blur-md px-0' />
+    <section className='w-full relative h-full flex flex-col overflow-x-hidden px-4'>
+      <AppHeader className='sticky top-6 z-50 backdrop-blur-md bg-white/70 shadow drop-shadow-sm mt-6 max-w-screen-lg mx-auto rounded-3xl ' />
 
       <section className='w-full flex flex-col'>
         <div className='relative sm:w-max mx-auto mt-6 flex flex-col items-center justify-center'>

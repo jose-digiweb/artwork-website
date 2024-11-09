@@ -19,7 +19,7 @@ export const AppHeader = ({ className }: Props) => {
       className={cn('w-full flex items-center justify-between gap-4 p-4', className)}
     >
       <Link href='/'>
-        <h1 className='text-3xl font-bold text-primary'>BangeYhodhy</h1>
+        <h1 className='sm:text-3xl text-2xl font-black text-primary'>BangeYhodhy</h1>
       </Link>
 
       <AppNavigation />
