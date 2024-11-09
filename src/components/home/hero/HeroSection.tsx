@@ -50,7 +50,7 @@ export const HeroSection = () => {
             className='w-full h-full object-cover rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] sm:hover:scale-110 scale-110 sm:hover:rotate-3 rotate-3 transition-all duration-500 cursor-pointer shrink-0 sm:scale-100 sm:rotate-0'
           />
         </div>
-        <div className='sm:h-[500px] sm:w-[350px] w-[300px] h-[400px] flex shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
+        <div className='sm:h-[500px] sm:w-[350px] w-[200px] h-[300px] flex shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
           <CloudinaryImage
             width={500}
             height={600}
