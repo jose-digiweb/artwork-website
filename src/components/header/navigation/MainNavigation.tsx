@@ -9,8 +9,8 @@ import Link from 'next/link';
 
 // The navigation links
 export const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/#', label: 'About' },
+  // { href: '/', label: 'Home' },
+  { href: '/#', label: 'About me' },
   { href: '/#', label: 'Gallery' },
   { href: '/#', label: 'Contact' },
 ] as const;
@@ -35,16 +35,19 @@ export const MainNavigation = ({ className }: Props) => {
 
   // Render the navigation links
   return (
-    <nav className={cn('flex items-center gap-4', className)}>
+    <nav className={cn('flex items-center gap-4 text-lg', className)}>
       {navLinks.map((nav, index) => (
-        <Link
-          key={index}
-          href={nav.href}
-          className={cn('hover:text-primary', {
-            'text-primary': isActive(nav),
-          })}
-        >
+        <Link key={index} href={nav.href} className={cn('font-medium relative group')}>
           {nav.label}
+
+          <span
+            className={cn(
+              'absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-primary group-hover:w-full',
+              {
+                'w-full': isActive(nav),
+              }
+            )}
+          />
         </Link>
       ))}
     </nav>

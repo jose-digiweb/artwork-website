@@ -1,2 +1,2 @@
 export { BackgroundImage } from './BackgroundImage';
-export { AppHero } from './hero';
+export { AppHero, HeroSection } from './hero';

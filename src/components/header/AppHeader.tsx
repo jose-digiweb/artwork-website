@@ -15,9 +15,11 @@ type Props = {
  */
 export const AppHeader = ({ className }: Props) => {
   return (
-    <header className={cn('w-full flex items-center justify-between', className)}>
-      <Link href='/' className='text-2xl font-bold text-primary'>
-        BangeYhodhy
+    <header
+      className={cn('w-full flex items-center justify-between gap-4 p-4', className)}
+    >
+      <Link href='/'>
+        <h1 className='text-3xl font-bold text-primary'>BangeYhodhy</h1>
       </Link>
 
       <AppNavigation />
