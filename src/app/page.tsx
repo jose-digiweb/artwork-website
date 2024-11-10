@@ -41,6 +41,7 @@ export default function HomePage() {
             <div className='relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl'>
               <CloudinaryImage
                 fill
+                priority
                 alt='Bange Yhodhy'
                 src='bange_yhodhy_ub8mki.png'
                 className='rounded-full object-cover'
@@ -77,6 +78,7 @@ export default function HomePage() {
               >
                 <CloudinaryImage
                   fill
+                  priority
                   src={image.src}
                   alt={`Featured Artwork ${image.title}`}
                   className='transition-transform duration-300 group-hover:scale-110 object-cover'

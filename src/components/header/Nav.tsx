@@ -28,18 +28,18 @@ export const Nav = ({ className }: { className?: string }) => {
           </button>
         </div>
       </div>
-      {/* Mobile menu */}
+
       {isMenuOpen && (
-        <div className='md:hidden absolute top-full left-0 right-0 bg-purple-700 bg-opacity-90 backdrop-blur-sm'>
+        <div className='md:hidden absolute top-full left-0 right-0 bg-white/90 drop-shadow-md z-50'>
           <div className='container mx-auto px-6 py-4'>
             <div className='flex flex-col space-y-4'>
-              <NavLink href='/about' onClick={() => setIsMenuOpen(false)}>
+              <NavLink href='/#' onClick={() => setIsMenuOpen(false)}>
                 About Me
               </NavLink>
-              <NavLink href='/gallery' onClick={() => setIsMenuOpen(false)}>
+              <NavLink href='/#' onClick={() => setIsMenuOpen(false)}>
                 Gallery
               </NavLink>
-              <NavLink href='/contact' onClick={() => setIsMenuOpen(false)}>
+              <NavLink href='/#' onClick={() => setIsMenuOpen(false)}>
                 Contact
               </NavLink>
             </div>
