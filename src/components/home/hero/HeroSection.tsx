@@ -20,8 +20,10 @@ export const HeroSection = () => {
 
           <p className='text-center text-4xl mb-2'>
             Hi, I’m{' '}
-            <span className='px-2 text-white bg-primary rounded'>Bange Yhodhy</span>,{' '}
-            <br />
+            <span className='px-2 text-white bg-primary rounded font-kushan]'>
+              Bange Yhodhy
+            </span>
+            , <br />
           </p>
           <p className='text-center text-4xl mb-4'>and I love abstract paintings.</p>
           <p className='text-pretty text-lg text-center max-w-sm sm:max-w-lg'>
@@ -41,6 +43,7 @@ export const HeroSection = () => {
             className='w-full h-full object-cover rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] sm:hover:scale-110 sm:scale-100 scale-110 sm:hover:-rotate-3 -rotate-3 transition-all duration-500 cursor-pointer shrink-0 sm:rotate-0'
           />
         </div>
+
         <div className='sm:w-[250px] sm:h-[350px] w-[200px] h-[300px] flex shrink-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
           <CloudinaryImage
             width={300}
@@ -50,6 +53,7 @@ export const HeroSection = () => {
             className='w-full h-full object-cover rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] sm:hover:scale-110 scale-110 sm:hover:rotate-3 rotate-3 transition-all duration-500 cursor-pointer shrink-0 sm:scale-100 sm:rotate-0'
           />
         </div>
+
         <div className='sm:h-[500px] sm:w-[350px] w-[200px] h-[300px] flex shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
           <CloudinaryImage
             width={500}
@@ -59,6 +63,7 @@ export const HeroSection = () => {
             className='w-full h-full object-cover sm:hover:scale-110 scale-110 sm:hover:-rotate-3 -rotate-3 grow-0 transition-all duration-500 cursor-pointer shrink-0 rounded-lg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] sm:scale-100 sm:rotate-0'
           />
         </div>
+
         <div className='sm:w-[250px] sm:h-[350px] w-[200px] h-[300px] flex shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
           <CloudinaryImage
             width={300}
@@ -68,6 +73,7 @@ export const HeroSection = () => {
             className='w-full h-full object-cover sm:hover:scale-110 scale-110 sm:hover:rotate-3 rotate-3 transition-all duration-500 cursor-pointer shrink-0 grow-0 rounded-sm sm:scale-100 sm:rotate-0'
           />
         </div>
+
         <div className='max-w-[200px] h-[300px] shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] hidden sm:flex'>
           <CloudinaryImage
             width={200}

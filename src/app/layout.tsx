@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Kaushan_Script } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 
@@ -11,6 +12,13 @@ const geistMono = localFont({
   src: './fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
+});
+
+const kalam = Kaushan_Script({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-kushan',
 });
 
 export const metadata: Metadata = {
@@ -27,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='font-[family-name:var(--font-geist-sans)]'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full h-dvh overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} antialiased w-full h-dvh overflow-hidden`}
       >
         {children}
       </body>
