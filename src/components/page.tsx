@@ -1,39 +1,11 @@
-// Components
-
-import { CloudinaryImage } from '@/components/cloudinary';
+import Image from 'next/image';
 import Link from 'next/link';
 
-const FeaturedImages = [
-  {
-    src: 'The_Unseen_Divide_uyvlqq.jpg',
-    title: 'Chromatic Dreams',
-    description: '2024 Collection',
-  },
-  {
-    src: 'The_Unseen_Force_zbjipp.jpg',
-    title: 'Ethereal Forms',
-    description: '2024 Collection',
-  },
-  {
-    src: 'new1_bogmow.jpg',
-    title: 'Ethereal Forms',
-    description: '2024 Collection',
-  },
-];
-
-/**
- * The Home component
- * @description A component that displays the home page
- * @returns The Home component
- */
-export default function HomePage() {
+export function HomePage() {
   return (
-    <div className='min-h-full w-full h-full bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 relative overflow-y-auto'>
+    <div className='min-h-screen bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 relative overflow-hidden'>
       {/* Abstract background shapes */}
-      <svg
-        className='absolute z-0 inset-0 w-full h-full'
-        xmlns='http://www.w3.org/2000/svg'
-      >
+      <svg className='absolute inset-0 w-full h-full' xmlns='http://www.w3.org/2000/svg'>
         <defs>
           <pattern id='smallGrid' width='20' height='20' patternUnits='userSpaceOnUse'>
             <path
@@ -53,12 +25,11 @@ export default function HomePage() {
       </svg>
 
       {/* Header */}
-      <header className='relative z-10 p-6 mb-8'>
+      <header className='relative z-10 p-6'>
         <nav className='max-w-7xl mx-auto flex justify-between items-center'>
           <Link href='/' className='text-gray-800 text-2xl font-bold'>
             Bange Yhodhy
           </Link>
-
           <div className='space-x-8'>
             <Link
               href='/about'
@@ -88,11 +59,12 @@ export default function HomePage() {
           {/* Left Column - Artist Photo */}
           <div className='w-full lg:w-1/2 flex justify-center lg:justify-end mb-8 lg:mb-0'>
             <div className='relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl'>
-              <CloudinaryImage
-                fill
+              <Image
+                src='/placeholder.svg?height=400&width=400'
                 alt='Bange Yhodhy'
-                src='bange_yhodhy_ub8mki.png'
-                className='rounded-full object-cover'
+                layout='fill'
+                objectFit='cover'
+                className='rounded-full'
               />
             </div>
           </div>
@@ -119,19 +91,20 @@ export default function HomePage() {
             Featured Artworks
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-            {FeaturedImages.map((image, i) => (
+            {[1, 2, 3].map(i => (
               <div
                 key={i}
                 className='relative aspect-square overflow-hidden rounded-lg shadow-lg group'
               >
-                <CloudinaryImage
-                  fill
-                  src={image.src}
-                  alt={`Featured Artwork ${image.title}`}
-                  className='transition-transform duration-300 group-hover:scale-110 object-cover'
+                <Image
+                  src={`/placeholder.svg?height=400&width=400&text=Artwork+${i}`}
+                  alt={`Featured Artwork ${i}`}
+                  layout='fill'
+                  objectFit='cover'
+                  className='transition-transform duration-300 group-hover:scale-110'
                 />
                 <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4'>
-                  <p className='text-white text-lg font-semibold'>{image.title}</p>
+                  <p className='text-white text-lg font-semibold'>Artwork Title {i}</p>
                 </div>
               </div>
             ))}

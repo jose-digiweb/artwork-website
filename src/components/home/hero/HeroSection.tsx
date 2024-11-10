@@ -69,7 +69,7 @@ export function HeroSection() {
                 width={256}
                 height={256}
                 alt='BangeYhodhy'
-                src='bange-frame_un1jxc.png'
+                src='bange_yhodhy_ub8mki.png'
                 className='w-full h-full object-cover'
               />
             </motion.div>
