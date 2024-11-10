@@ -1,89 +1,139 @@
-import { CloudinaryImage } from '@/components/cloudinary';
-import { AppHeader } from '@/components/header';
+'use client';
 
-export const HeroSection = () => {
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import Link, { LinkProps } from 'next/link';
+import { Menu, X } from 'lucide-react';
+import { CloudinaryImage } from '../../cloudinary';
+import { AbstractedShapes } from '../AbstractedShapes';
+
+export function HeroSection() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <section className='w-full relative h-full flex flex-col overflow-x-hidden px-4'>
-      <AppHeader className='sticky top-6 z-50 backdrop-blur-md bg-white/70 shadow drop-shadow-sm mt-6 max-w-screen-lg mx-auto rounded-3xl ' />
-
-      <section className='w-full flex flex-col'>
-        <div className='relative sm:w-max mx-auto mt-6 flex flex-col items-center justify-center'>
-          <div className='flex w-[100px] mb-6'>
-            <CloudinaryImage
-              width={100}
-              height={100}
-              alt='BangeYhodhy'
-              src='bange-frame_un1jxc.png'
-              className='w-full h-full object-contain rounded-sm'
-            />
-          </div>
-
-          <p className='text-center text-4xl mb-2'>
-            Hi, I’m{' '}
-            <span className='px-2 text-white bg-primary rounded font-kushan]'>
+    <section className='relative min-h-dvh w-full flex flex-col'>
+      <nav className='relative z-20 w-full bg-white bg-opacity-10 backdrop-blur-sm'>
+        <div className='container mx-auto px-6 py-4'>
+          <div className='flex items-center justify-between'>
+            <Link href='/' className='text-white text-2xl font-bold'>
               Bange Yhodhy
-            </span>
-            , <br />
-          </p>
-          <p className='text-center text-4xl mb-4'>and I love abstract paintings.</p>
-          <p className='text-pretty text-lg text-center max-w-sm sm:max-w-lg'>
-            My artwork is a vibrant exploration of color, form, and texture. <br /> I draw
-            inspiration from my surroundings, my emotions, and my innermost thoughts.
-          </p>
+            </Link>
+            <div className='hidden md:flex space-x-8'>
+              <NavLink href='/#'>About Me</NavLink>
+              <NavLink href='/#'>Gallery</NavLink>
+              <NavLink href='/#'>Contact</NavLink>
+            </div>
+            <button
+              className='md:hidden text-white'
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label='Toggle menu'
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-      </section>
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className='md:hidden absolute top-full left-0 right-0 bg-purple-700 bg-opacity-90 backdrop-blur-sm'>
+            <div className='container mx-auto px-6 py-4'>
+              <div className='flex flex-col space-y-4'>
+                <NavLink href='/about' onClick={() => setIsMenuOpen(false)}>
+                  About Me
+                </NavLink>
+                <NavLink href='/gallery' onClick={() => setIsMenuOpen(false)}>
+                  Gallery
+                </NavLink>
+                <NavLink href='/contact' onClick={() => setIsMenuOpen(false)}>
+                  Contact
+                </NavLink>
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
 
-      <section className='w-full h-full flex items-center py-14 justify-center gap-14'>
-        <div className='max-w-[200px] hidden sm:flex h-[300px] shrink-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
-          <CloudinaryImage
-            width={200}
-            height={300}
-            alt='BangeYhodhy'
-            src='canva-portrait-reds_bmpsso.jpg'
-            className='w-full h-full object-cover rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] sm:hover:scale-110 sm:scale-100 scale-110 sm:hover:-rotate-3 -rotate-3 transition-all duration-500 cursor-pointer shrink-0 sm:rotate-0'
-          />
-        </div>
+      <AbstractedShapes />
 
-        <div className='sm:w-[250px] sm:h-[350px] w-[200px] h-[300px] flex shrink-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
-          <CloudinaryImage
-            width={300}
-            height={400}
-            alt='BangeYhodhy'
-            src='canvas-portrait-women_pet6fe.jpg'
-            className='w-full h-full object-cover rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] sm:hover:scale-110 scale-110 sm:hover:rotate-3 rotate-3 transition-all duration-500 cursor-pointer shrink-0 sm:scale-100 sm:rotate-0'
-          />
-        </div>
+      {/* Content */}
+      <div className='relative z-10 flex-grow flex items-center justify-center'>
+        <div className='text-center px-4 max-w-6xl mx-auto'>
+          <div className='flex flex-col md:flex-row items-center justify-center gap-8 mb-8'>
+            <motion.div
+              className='size-64 rounded-full shrink-0 overflow-hidden bg-white shadow-lg'
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <CloudinaryImage
+                width={256}
+                height={256}
+                alt='BangeYhodhy'
+                src='bange-frame_un1jxc.png'
+                className='w-full h-full object-cover'
+              />
+            </motion.div>
+            <div className='md:text-left'>
+              <motion.h1
+                className='text-4xl md:text-6xl font-bold text-white mb-4 font-[family-name:var(--font-kushan)]'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                Hi, I&apos;m Bange Yhodhy
+              </motion.h1>
+              <motion.p
+                className='text-xl md:text-2xl text-white mb-4'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                and I love abstract paintings.
+              </motion.p>
 
-        <div className='sm:h-[500px] sm:w-[350px] w-[200px] h-[300px] flex shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
-          <CloudinaryImage
-            width={500}
-            height={600}
-            alt='BangeYhodhy'
-            src='canvas-2-portrait_1_znptnh.png'
-            className='w-full h-full object-cover sm:hover:scale-110 scale-110 sm:hover:-rotate-3 -rotate-3 grow-0 transition-all duration-500 cursor-pointer shrink-0 rounded-lg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] sm:scale-100 sm:rotate-0'
-          />
-        </div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className='text-lg md:text-xl text-white mb-6'
+              >
+                My artwork is a vibrant exploration of color, form, and texture. <br /> I
+                draw inspiration from my surroundings, my emotions, and my innermost
+                thoughts.
+              </motion.p>
 
-        <div className='sm:w-[250px] sm:h-[350px] w-[200px] h-[300px] flex shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'>
-          <CloudinaryImage
-            width={300}
-            height={400}
-            alt='BangeYhodhy'
-            src='canva-portrait_wcmdc6.png'
-            className='w-full h-full object-cover sm:hover:scale-110 scale-110 sm:hover:rotate-3 rotate-3 transition-all duration-500 cursor-pointer shrink-0 grow-0 rounded-sm sm:scale-100 sm:rotate-0'
-          />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <Button className='text-lg px-8 py-6 rounded-xl'>
+                  Explore My Gallery
+                </Button>
+              </motion.div>
+            </div>
+          </div>
         </div>
-
-        <div className='max-w-[200px] h-[300px] shrink-0 grow-0 rounded-sm shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] hidden sm:flex'>
-          <CloudinaryImage
-            width={200}
-            height={300}
-            alt='BangeYhodhy'
-            src='canva-portrait-green_j8diub.jpg'
-            className='w-full h-full object-cover sm:hover:scale-110 scale-110 sm:hover:-rotate-3 -rotate-3 sm:scale-100 sm:rotate-0 transition-all duration-500 cursor-pointer shrink-0 grow-0 rounded-sm'
-          />
-        </div>
-      </section>
+      </div>
     </section>
   );
-};
+}
+
+function NavLink({
+  href,
+  children,
+  ...props
+}: {
+  href: string;
+  children: React.ReactNode;
+} & LinkProps) {
+  return (
+    <Link
+      href={href}
+      className='text-white hover:text-purple-200 transition-colors'
+      {...props}
+    >
+      {children}
+    </Link>
+  );
+}
