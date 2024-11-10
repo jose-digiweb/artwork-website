@@ -1,6 +1,6 @@
-// Components
-
 import { CloudinaryImage } from '@/components/cloudinary';
+import { Nav } from '@/components/header/Nav';
+import { AbstractedShapes } from '@/components/home/AbstractedShapes';
 import Link from 'next/link';
 
 const FeaturedImages = [
@@ -29,58 +29,9 @@ const FeaturedImages = [
 export default function HomePage() {
   return (
     <div className='min-h-full w-full h-full bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 relative overflow-y-auto'>
-      {/* Abstract background shapes */}
-      <svg
-        className='absolute z-0 inset-0 w-full h-full'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <defs>
-          <pattern id='smallGrid' width='20' height='20' patternUnits='userSpaceOnUse'>
-            <path
-              d='M 20 0 L 0 0 0 20'
-              fill='none'
-              stroke='rgba(0,0,0,0.05)'
-              strokeWidth='0.5'
-            />
-          </pattern>
-        </defs>
-        <rect width='100%' height='100%' fill='url(#smallGrid)' />
-        <circle cx='5%' cy='10%' r='50' fill='rgba(255,182,193,0.3)' />
-        <circle cx='95%' cy='50%' r='100' fill='rgba(216,180,254,0.3)' />
-        <circle cx='15%' cy='90%' r='70' fill='rgba(165,180,252,0.3)' />
-        <path d='M0,0 Q50,100 100,0 V100 H0 Z' fill='rgba(255,255,255,0.05)' />
-        <path d='M0,100 Q50,0 100,100 V0 H0 Z' fill='rgba(0,0,0,0.03)' />
-      </svg>
+      <AbstractedShapes />
 
-      {/* Header */}
-      <header className='relative z-10 p-6 mb-8'>
-        <nav className='max-w-7xl mx-auto flex justify-between items-center'>
-          <Link href='/' className='text-gray-800 text-2xl font-bold'>
-            Bange Yhodhy
-          </Link>
-
-          <div className='space-x-8'>
-            <Link
-              href='/about'
-              className='text-gray-600 hover:text-gray-800 transition-colors'
-            >
-              About Me
-            </Link>
-            <Link
-              href='/gallery'
-              className='text-gray-600 hover:text-gray-800 transition-colors'
-            >
-              Gallery
-            </Link>
-            <Link
-              href='/contact'
-              className='text-gray-600 hover:text-gray-800 transition-colors'
-            >
-              Contact
-            </Link>
-          </div>
-        </nav>
-      </header>
+      <Nav className='sticky top-0 bg-white/20 backdrop-blur-sm' />
 
       {/* Main Content */}
       <main className='relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 lg:px-12 max-w-7xl mx-auto'>
@@ -114,7 +65,7 @@ export default function HomePage() {
         </div>
 
         {/* Featured Section */}
-        <section className='w-full mt-16'>
+        <section className='w-full mt-8 py-8'>
           <h2 className='text-3xl font-bold text-gray-800 mb-8 text-center'>
             Featured Artworks
           </h2>
@@ -138,7 +89,7 @@ export default function HomePage() {
           </div>
           <div className='text-center mt-12'>
             <Link
-              href='/gallery'
+              href='/#'
               className='inline-block bg-gray-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition-colors'
             >
               View All Artworks
