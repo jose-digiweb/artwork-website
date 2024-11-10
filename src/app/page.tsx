@@ -1,25 +1,8 @@
 import { CloudinaryImage } from '@/components/cloudinary';
 import { Nav } from '@/components/header/Nav';
 import { AbstractedShapes } from '@/components/home/AbstractedShapes';
+import { Gallery } from '@/components/home/Gallery';
 import Link from 'next/link';
-
-const FeaturedImages = [
-  {
-    src: 'The_Unseen_Divide_uyvlqq.jpg',
-    title: 'Chromatic Dreams',
-    description: '2024 Collection',
-  },
-  {
-    src: 'The_Unseen_Force_zbjipp.jpg',
-    title: 'Ethereal Forms',
-    description: '2024 Collection',
-  },
-  {
-    src: 'new1_bogmow.jpg',
-    title: 'Ethereal Forms',
-    description: '2024 Collection',
-  },
-];
 
 /**
  * The Home component
@@ -70,7 +53,10 @@ export default function HomePage() {
           <h2 className='text-3xl font-bold text-gray-800 mb-8 text-center'>
             Featured Artworks
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+
+          <Gallery />
+
+          {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {FeaturedImages.map((image, i) => (
               <div
                 key={i}
@@ -88,7 +74,7 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
           <div className='text-center mt-12'>
             <Link
               href='/#'
