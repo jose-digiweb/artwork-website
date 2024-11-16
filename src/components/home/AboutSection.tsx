@@ -34,8 +34,8 @@ export function AboutSection() {
   ];
 
   return (
-    <section className='w-full bg-white/50 md:bg-transparent backdrop-blur-sm overflow-hidden rounded-xl p-4 md:p-0'>
-      <div className='flex flex-col items-start justify-center space-y-4 text-center py-4'>
+    <section className='w-full bg-white/50 md:bg-transparent backdrop-blur-sm overflow-hidden rounded-xl p-4 md:p-0 mt-8 md:mt-0'>
+      <div className='flex flex-col items-start justify-center space-y-4 text-center md:py-4'>
         <TextGradientClip className='text-3xl font-light tracking-tight sm:text-5xl'>
           About me
         </TextGradientClip>
