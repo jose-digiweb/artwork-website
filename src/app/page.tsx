@@ -2,6 +2,8 @@ import { CloudinaryImage } from '@/components/cloudinary';
 import { Nav } from '@/components/header/Nav';
 import { AbstractedShapes } from '@/components/home/AbstractedShapes';
 import { Gallery } from '@/components/home/Gallery';
+import { Button } from '@/components/ui/button';
+import { Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 
 /**
@@ -20,31 +22,43 @@ export default function HomePage() {
       <main className='relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 lg:px-12 max-w-7xl mx-auto'>
         <div className='flex flex-col lg:flex-row items-center justify-center w-full mb-16'>
           {/* Left Column - Artist Photo */}
-          <div className='w-full lg:w-1/2 flex justify-center lg:justify-end mb-8 lg:mb-0'>
-            <div className='relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl'>
-              <CloudinaryImage
-                fill
-                priority
-                alt='Bange Yhodhy'
-                src='bange_yhodhy_ub8mki.png'
-                className='rounded-full object-cover'
-              />
-            </div>
+          <div className='relative size-64 shrink-0 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl'>
+            <CloudinaryImage
+              fill
+              priority
+              sizes='(max-width: 768px) 320px, 640px'
+              crop='auto'
+              alt='Bange Yhodhy'
+              src='bange_yhodhy_ub8mki.png'
+              className='rounded-full object-cover'
+            />
           </div>
 
           {/* Right Column - Text Content */}
           <div className='w-full lg:w-1/2 lg:pl-12 text-center lg:text-left'>
-            <h1 className='text-5xl lg:text-6xl font-bold text-gray-800 mb-4 tracking-tight'>
-              Hi, I&apos;m Bange Yhodhy
+            <h1 className='text-5xl font-bold text-gray-800 mb-2 tracking-tight'>
+              Hi, I&apos;m{' '}
+              <span className='bg-gradient-to-r from-fuchsia-600 to-indigo-600 bg-clip-text text-transparent'>
+                Bange Yhodhy
+              </span>
             </h1>
-            <p className='text-xl text-gray-600 mb-4'>and I love abstract paintings.</p>
-            <p className='text-gray-500 leading-relaxed mb-8'>
-              My artwork is a vibrant exploration of color, form, and texture. I draw
-              inspiration from my surroundings, my emotions, and my innermost thoughts.
+            <p className='text-3xl text-gray-800 mb-4'>
+              and I love{' '}
+              <span className='bg-gradient-to-r from-fuchsia-600 to-indigo-600 bg-clip-text text-transparent'>
+                abstract paintings.
+              </span>
             </p>
-            <button className='bg-fuchsia-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-fuchsia-600 transition-colors'>
-              Explore My Gallery
-            </button>
+            <p className='text-gray-500 leading-relaxed mb-8'>
+              My artwork is a vibrant exploration of color, form, and texture. <br /> I
+              draw inspiration from my surroundings, my emotions, and my innermost
+              thoughts.
+            </p>
+
+            <Button className='h-12'>
+              <ImageIcon />
+
+              <span>Explore My Gallery</span>
+            </Button>
           </div>
         </div>
 
@@ -56,31 +70,12 @@ export default function HomePage() {
 
           <Gallery />
 
-          {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-            {FeaturedImages.map((image, i) => (
-              <div
-                key={i}
-                className='relative aspect-square overflow-hidden rounded-lg shadow-lg group'
-              >
-                <CloudinaryImage
-                  fill
-                  priority
-                  src={image.src}
-                  alt={`Featured Artwork ${image.title}`}
-                  className='transition-transform duration-300 group-hover:scale-110 object-cover'
-                />
-                <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4'>
-                  <p className='text-white text-lg font-semibold'>{image.title}</p>
-                </div>
-              </div>
-            ))}
-          </div> */}
           <div className='text-center mt-12'>
-            <Link
-              href='/#'
-              className='inline-block bg-gray-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition-colors'
-            >
-              View All Artworks
+            <Link href='/#'>
+              <Button className='h-12'>
+                <ImageIcon />
+                <span>View All Artworks</span>
+              </Button>
             </Link>
           </div>
         </section>
