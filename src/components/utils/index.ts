@@ -1,0 +1,1 @@
+export { TextGradientClip } from './TextGradientClip';

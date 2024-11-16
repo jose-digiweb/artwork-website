@@ -1,10 +1,14 @@
+'use client';
+
 import { CloudinaryImage } from '@/components/cloudinary';
 import { Nav } from '@/components/header/Nav';
 import { AbstractedShapes } from '@/components/home/AbstractedShapes';
 import { Gallery } from '@/components/home/Gallery';
 import { Button } from '@/components/ui/button';
-import { Image as ImageIcon } from 'lucide-react';
+import { GalleryVertical, Image as ImageIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { TextGradientClip } from '@/components/utils';
 
 /**
  * The Home component
@@ -20,7 +24,12 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main className='relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 lg:px-12 max-w-7xl mx-auto'>
-        <div className='flex flex-col lg:flex-row items-center justify-center w-full mb-16'>
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className='flex flex-col lg:flex-row items-center justify-center w-full mb-16'
+        >
           {/* Left Column - Artist Photo */}
           <div className='relative size-64 shrink-0 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl'>
             <CloudinaryImage
@@ -37,16 +46,10 @@ export default function HomePage() {
           {/* Right Column - Text Content */}
           <div className='w-full lg:w-1/2 lg:pl-12 text-center lg:text-left'>
             <h1 className='text-5xl font-bold text-gray-800 mb-2 tracking-tight'>
-              Hi, I&apos;m{' '}
-              <span className='bg-gradient-to-r from-fuchsia-600 to-indigo-600 bg-clip-text text-transparent'>
-                Bange Yhodhy
-              </span>
+              Hi, I&apos;m <TextGradientClip>Bange Yhodhy</TextGradientClip>
             </h1>
             <p className='text-3xl text-gray-800 mb-4'>
-              and I love{' '}
-              <span className='bg-gradient-to-r from-fuchsia-600 to-indigo-600 bg-clip-text text-transparent'>
-                abstract paintings.
-              </span>
+              and I love <TextGradientClip>abstract paintings.</TextGradientClip>
             </p>
             <p className='text-gray-500 leading-relaxed mb-8'>
               My artwork is a vibrant exploration of color, form, and texture. <br /> I
@@ -54,19 +57,30 @@ export default function HomePage() {
               thoughts.
             </p>
 
-            <Button className='h-12'>
-              <ImageIcon />
+            <Button className='gap-4'>
+              <GalleryVertical />
 
-              <span>Explore My Gallery</span>
+              <span>Explore Gallery</span>
             </Button>
           </div>
-        </div>
+        </motion.section>
 
         {/* Featured Section */}
-        <section className='w-full mt-8 py-8'>
-          <h2 className='text-3xl font-bold text-gray-800 mb-8 text-center'>
-            Featured Artworks
-          </h2>
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className='w-full sm:mt-8 py-8'
+        >
+          <div className='flex flex-col items-center justify-center space-y-4 text-center mb-12'>
+            <TextGradientClip className='text-3xl font-light tracking-tight sm:text-5xl'>
+              Featured Works
+            </TextGradientClip>
+            <div className='w-16 h-0.5 bg-gray-300' />
+            <p className='max-w-[600px] text-gray-500 md:text-lg/relaxed'>
+              Explore my latest creations, where form and texture intertwine.
+            </p>
+          </div>
 
           <Gallery />
 
@@ -78,7 +92,7 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-        </section>
+        </motion.section>
       </main>
     </div>
   );
