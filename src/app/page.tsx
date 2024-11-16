@@ -28,10 +28,10 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className='flex flex-col lg:flex-row items-center justify-center w-full mb-16'
+          className='flex flex-col lg:flex-row items-center justify-center w-full py-4 md:mb-8'
         >
           {/* Left Column - Artist Photo */}
-          <div className='relative size-64 shrink-0 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl'>
+          <div className='relative size-64 shrink-0 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl mb-6 sm:md-0'>
             <CloudinaryImage
               fill
               priority
@@ -70,9 +70,9 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className='w-full sm:mt-8 py-8'
+          className='w-full'
         >
-          <div className='flex flex-col items-center justify-center space-y-4 text-center mb-12'>
+          <div className='flex flex-col items-center justify-center space-y-4 text-center py-8'>
             <TextGradientClip className='text-3xl font-light tracking-tight sm:text-5xl'>
               Featured Works
             </TextGradientClip>
@@ -84,7 +84,7 @@ export default function HomePage() {
 
           <Gallery />
 
-          <div className='text-center mt-12'>
+          <div className='text-center py-8'>
             <Link href='/#'>
               <Button className='h-12'>
                 <ImageIcon />
