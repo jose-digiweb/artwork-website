@@ -75,7 +75,7 @@ export default function HomePage() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className='w-full sm:mb-8'
         >
-          <div className='flex flex-col items-start justify-center space-y-4 text-center py-6'>
+          <div className='flex flex-col items-start justify-center space-y-4 md:text-center py-6'>
             <TextGradientClip className='text-3xl font-light tracking-tight sm:text-5xl'>
               Featured Works
             </TextGradientClip>
