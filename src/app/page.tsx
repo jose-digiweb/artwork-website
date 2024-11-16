@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { GalleryVertical } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { TextGradientClip } from '@/components/utils';
-import { AboutSection } from '@/components/home';
+import { AboutSection, SectionTitle } from '@/components/home';
 import { Footer } from '@/components/footer/Footer';
 
 /**
@@ -75,15 +75,11 @@ export default function HomePage() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className='w-full sm:mb-8'
         >
-          <div className='flex flex-col items-start justify-center space-y-4 md:text-center py-6'>
-            <TextGradientClip className='text-3xl font-light tracking-tight sm:text-5xl'>
-              Featured Works
-            </TextGradientClip>
-            <div className='w-16 h-0.5 bg-gray-300' />
-            <p className='max-w-[600px] text-gray-500 md:text-lg/relaxed'>
-              Explore my latest creations, where form and texture intertwine.
-            </p>
-          </div>
+          <SectionTitle
+            title='Featured Works'
+            description="Bange Yhodhy's latest creations."
+            className='md:mb-4'
+          />
 
           <Gallery />
         </motion.section>

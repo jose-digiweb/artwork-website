@@ -6,8 +6,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Paintbrush, Palette, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CloudinaryImage } from '../cloudinary';
-import { TextGradientClip } from '../utils';
 import { cn } from '@/lib/utils';
+import { SectionTitle } from './SectionTitle';
 
 export function AboutSection() {
   const [activeCard, setActiveCard] = useState(0);
@@ -35,15 +35,7 @@ export function AboutSection() {
 
   return (
     <section className='w-full bg-white/50 md:bg-transparent backdrop-blur-sm overflow-hidden rounded-xl p-4 md:p-0 mt-8 md:mt-0'>
-      <div className='flex flex-col items-start justify-center space-y-4 text-center md:py-4'>
-        <TextGradientClip className='text-3xl font-light tracking-tight sm:text-5xl'>
-          About me
-        </TextGradientClip>
-        <div className='w-16 h-0.5 bg-gray-300' />
-        <p className='max-w-[600px] text-gray-500 md:text-lg/relaxed'>
-          Read more about Bange Yhodhy.
-        </p>
-      </div>
+      <SectionTitle title='About me' description='Read more about Bange Yhodhy.' />
 
       <div className='grid md:grid-cols-[auto_1fr] grid-cols-1 gap-4 md:gap-12 items-start md:py-4'>
         <motion.div
@@ -88,7 +80,7 @@ export function AboutSection() {
             <Card
               key={index}
               className={cn(
-                'cursor-pointer transition-all duration-300',
+                'cursor-pointer transition-all duration-300 border-none',
                 activeCard === index
                   ? 'bg-primary text-primary-foreground'
                   : 'hover:bg-gray-100'
