@@ -31,8 +31,8 @@ const FeaturedImages = [
     description: '2024 Collection',
   },
   {
-    src: 'https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256763/new1_bogmow.jpg',
-    title: 'Ethereal Forms',
+    src: 'https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256586/The_Unknown_abi0fn.jpg',
+    title: 'Immersive Forms',
     description: '2024 Collection',
   },
 ];

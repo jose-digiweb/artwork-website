@@ -23,7 +23,7 @@ export default function HomePage() {
       <Nav className='sticky top-0 bg-white/20 backdrop-blur-sm' />
 
       {/* Main Content */}
-      <main className='relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 lg:px-12 max-w-7xl mx-auto'>
+      <main className='relative z-10 flex flex-col items-center justify-center min-h-dvh px-4 lg:px-12 max-w-7xl mx-auto'>
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
