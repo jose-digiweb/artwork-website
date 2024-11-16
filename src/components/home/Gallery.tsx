@@ -40,7 +40,7 @@ const FeaturedImages = [
 export const Gallery = () => {
   return (
     <LightGallery selector='a' speed={500} plugins={[lgThumbnail, lgZoom]}>
-      <section className='grid grid-cols-2 lg:grid-cols-4 gap-8'>
+      <section className='grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8'>
         {FeaturedImages.map((image, i) => (
           <Link
             key={i}
@@ -55,7 +55,9 @@ export const Gallery = () => {
               className='transition-transform duration-300 sm:group-hover:scale-110 object-cover'
             />
             <div className='absolute inset-x-0 bottom-0 pt-8 bg-gradient-to-t from-black/90 to-transparent opacity-100 transition-opacity duration-300 flex p-4 flex-col'>
-              <p className='text-white text-lg font-semibold'>{image.title}</p>
+              <p className='text-white text-base sm:text-lg font-semibold'>
+                {image.title}
+              </p>
               <p className='text-gray-400 text-sm'>{image.description}</p>
             </div>
           </Link>

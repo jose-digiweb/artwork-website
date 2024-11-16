@@ -48,7 +48,7 @@ export default function HomePage() {
             <h1 className='text-5xl font-bold text-gray-800 mb-2 tracking-tight'>
               Hi, I&apos;m <TextGradientClip>Bange Yhodhy</TextGradientClip>
             </h1>
-            <p className='text-3xl text-gray-800 mb-4'>
+            <p className='sm:text-3xl text-xl text-gray-800 mb-4'>
               and I love <TextGradientClip>abstract paintings.</TextGradientClip>
             </p>
             <p className='text-gray-500 leading-relaxed mb-8'>
