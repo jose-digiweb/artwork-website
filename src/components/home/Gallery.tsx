@@ -50,6 +50,9 @@ export const Gallery = () => {
             <CloudinaryImage
               fill
               priority
+              crop='thumb'
+              format='auto'
+              aspectRatio='4:5'
               src={image.src}
               alt={`Featured Artwork ${image.title}`}
               className='transition-transform duration-300 sm:group-hover:scale-110 object-cover'
