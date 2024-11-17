@@ -22,9 +22,9 @@ export const AbstractedShapes = () => {
   }, [handleMouseMove]);
 
   return (
-    <>
+    <div className='absolute z-0 inset-0 w-full h-full overflow-hidden'>
       {/* Abstract background shapes */}
-      <svg className='absolute inset-0 w-full h-full' xmlns='http://www.w3.org/2000/svg'>
+      <svg className='w-full h-full' xmlns='http://www.w3.org/2000/svg'>
         <defs>
           <pattern id='smallGrid' width='20' height='20' patternUnits='userSpaceOnUse'>
             <path
@@ -86,6 +86,6 @@ export const AbstractedShapes = () => {
           animation-delay: 4s;
         }
       `}</style>
-    </>
+    </div>
   );
 };

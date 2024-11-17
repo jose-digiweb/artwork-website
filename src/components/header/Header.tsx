@@ -6,20 +6,26 @@ import React, { useState } from 'react';
 import { Button } from '../ui/button';
 import { AnimatePresence, motion } from 'framer-motion';
 
-export const Nav = ({ className }: { className?: string }) => {
+export const Header = ({ className }: { className?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className={cn('relative z-50 w-full mb-8', className)}>
+    <header
+      className={cn(
+        'z-50 w-full mb-8 sticky top-0 bg-white/30 backdrop-blur-md shadow',
+        className
+      )}
+    >
       <div className='container mx-auto px-6 py-4'>
         <div className='flex items-center justify-between'>
           <Link href='/' className='text-gray-800 text-2xl font-bold'>
             Bange Yhodhy
           </Link>
-          <div className='hidden md:flex space-x-6'>
+
+          <nav className='hidden md:flex space-x-6'>
             <NavLink href='/#'>Gallery</NavLink>
             <NavLink href='/#'>About Me</NavLink>
             <NavLink href='/#'>Contact</NavLink>
-          </div>
+          </nav>
 
           <Button
             variant='ghost'
@@ -48,7 +54,7 @@ export const Nav = ({ className }: { className?: string }) => {
             className='md:hidden absolute top-full inset-x-0 overflow-hidden bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 drop-shadow-md z-50'
           >
             <div className='container mx-auto px-6 py-4'>
-              <div className='flex flex-col space-y-4 items-end text-xl'>
+              <nav className='flex flex-col space-y-4 items-end text-xl'>
                 <NavLink href='/#' onClick={() => setIsMenuOpen(false)}>
                   Gallery
                 </NavLink>
@@ -58,12 +64,12 @@ export const Nav = ({ className }: { className?: string }) => {
                 <NavLink href='/#' onClick={() => setIsMenuOpen(false)}>
                   Contact
                 </NavLink>
-              </div>
+              </nav>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
 };
 
