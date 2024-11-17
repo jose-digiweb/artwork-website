@@ -46,10 +46,8 @@ export default function RootLayout({
         property='og:description'
         content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
       />
-      <meta property='og:image' content='/openg.jpg' />
 
-      <meta property='og:image:width' content='300' />
-      <meta property='og:image:height' content='300' />
+      <meta property='og:image' content='/openg.jpg' />
 
       <meta name='twitter:card' content='summary_large_image' />
       <meta property='twitter:domain' content='bangeyhodhy.com' />
