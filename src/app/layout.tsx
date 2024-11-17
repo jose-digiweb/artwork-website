@@ -38,6 +38,25 @@ export default function RootLayout({
       <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
       <link rel='manifest' href='/site.webmanifest' />
 
+      <meta property='og:url' content='https://bangeyhodhy.com' />
+      <meta property='og:type' content='website' />
+      <meta property='og:title' content='BangeYhodhy Abstract Painting' />
+      <meta
+        property='og:description'
+        content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
+      />
+      <meta property='og:image' content='/openg.jpg' />
+
+      <meta name='twitter:card' content='summary_large_image' />
+      <meta property='twitter:domain' content='bangeyhodhy.com' />
+      <meta property='twitter:url' content='https://bangeyhodhy.com' />
+      <meta name='twitter:title' content='BangeYhodhy Abstract Painting' />
+      <meta
+        name='twitter:description'
+        content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
+      />
+      <meta name='twitter:image' content='/openg.jpg' />
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} antialiased w-full h-dvh overflow-hidden bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100`}
       >
