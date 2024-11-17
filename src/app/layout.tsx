@@ -1,8 +1,12 @@
-import type { Metadata } from 'next';
+// Dependencies
 import { Kaushan_Script } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 
+// Types
+import type { Metadata } from 'next';
+
+// Fonts
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -20,12 +24,19 @@ const kalam = Kaushan_Script({
   variable: '--font-kushan',
 });
 
+// Metadata
 export const metadata: Metadata = {
   title: 'BangeYhodhy Abstract Painting',
   description:
     'Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.',
 };
 
+/**
+ * The RootLayout component
+ * @description The root layout component
+ * @param {React.ReactNode} children - The children components
+ * @returns {React.ReactNode} The root layout component
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
