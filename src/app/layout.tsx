@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='font-[family-name:var(--font-geist-sans)]'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} antialiased w-full h-dvh overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} antialiased w-full h-dvh overflow-hidden bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100`}
       >
         {children}
       </body>

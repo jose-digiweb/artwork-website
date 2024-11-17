@@ -16,11 +16,14 @@ export const Header = ({ className }: { className?: string }) => {
       )}
     >
       <div className='flex items-center justify-between max-w-screen-xl mx-auto w-full gap-4'>
-        <Link href='/' className='text-gray-800 text-2xl font-bold'>
+        <Link
+          href='/'
+          className='text-gray-800 text-2xl font-bold font-[family-name:var(--font-kushan)]'
+        >
           Bange Yhodhy
         </Link>
 
-        <nav className='hidden md:flex space-x-6'>
+        <nav className='hidden md:flex gap-6 font-medium'>
           <NavLink href='/#'>Gallery</NavLink>
           <NavLink href='/#'>About Me</NavLink>
           <NavLink href='/#'>Contact</NavLink>

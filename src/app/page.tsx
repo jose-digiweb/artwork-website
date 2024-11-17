@@ -16,7 +16,7 @@ import { Footer } from '@/components/footer/Footer';
  */
 export default function HomePage() {
   return (
-    <div className='min-h-full w-full h-full bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 relative overflow-y-auto'>
+    <div className='min-h-full w-full h-full relative overflow-y-auto'>
       <AbstractedShapes />
 
       <Header className='mb-8' />
