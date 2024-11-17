@@ -38,9 +38,10 @@ export default function RootLayout({
       <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
       <link rel='manifest' href='/site.webmanifest' />
 
-      <meta property='og:url' content='https://bangeyhodhy.com' />
       <meta property='og:type' content='website' />
+      <meta property='og:url' content='https://bangeyhodhy.com' />
       <meta property='og:title' content='BangeYhodhy Abstract Painting' />
+      <meta property='og:site_name' content='BangeYhodhy Abstract Painting' />
       <meta
         property='og:description'
         content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
