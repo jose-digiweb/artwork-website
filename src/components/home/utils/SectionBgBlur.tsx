@@ -1,5 +1,7 @@
-// Types
+// Dependencies
 import { cn } from '@/lib/utils';
+
+// Types
 import type { HTMLAttributes, ReactNode } from 'react';
 type Props = {
   className?: string;

@@ -1,20 +1,25 @@
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Twitter,
-} from 'lucide-react';
+// Dependencies
+import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardHeader } from '../ui/card';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
-import { SectionTitle } from './SectionTitle';
-import { SectionBgBlur } from './SectionBgBlur';
+import { SectionTitle, SectionBgBlur } from './utils';
+
+const SOCIAL_LINKS = [
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/atelie_bangeyhodhy',
+    icon: Instagram,
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/bangeyhodhy',
+    icon: Facebook,
+  },
+];
 
 export const ContactSection = () => {
   return (
@@ -47,15 +52,15 @@ export const ContactSection = () => {
               <div className='space-y-4'>
                 <div className='flex items-center'>
                   <Mail className='h-5 w-5 mr-2 text-purple-600' />
-                  <span>bange.yhodhy@example.com</span>
+                  <span>contact@bangeyhody.com</span>
                 </div>
                 <div className='flex items-center'>
                   <Phone className='h-5 w-5 mr-2 text-purple-600' />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+31 687 523 821</span>
                 </div>
                 <div className='flex items-center'>
                   <MapPin className='h-5 w-5 mr-2 text-purple-600' />
-                  <span>123 Art Studio Lane, Creativity City, AC 12345</span>
+                  <span>Rotterdam, The Netherlands</span>
                 </div>
               </div>
             </CardContent>
@@ -68,34 +73,17 @@ export const ContactSection = () => {
               </CardHeader>
 
               <div className='flex space-x-4'>
-                <Link
-                  href='https://instagram.com'
-                  className='text-purple-600 hover:text-purple-700'
-                >
-                  <span className='sr-only'>Instagram</span>
-                  <Instagram className='size-6' />
-                </Link>
-                <Link
-                  href='https://facebook.com'
-                  className='text-purple-600 hover:text-purple-700'
-                >
-                  <span className='sr-only'>Facebook</span>
-                  <Facebook className='size-6' />
-                </Link>
-                <Link
-                  href='https://twitter.com'
-                  className='text-purple-600 hover:text-purple-700'
-                >
-                  <span className='sr-only'>Twitter</span>
-                  <Twitter className='size-6' />
-                </Link>
-                <Link
-                  href='https://linkedin.com'
-                  className='text-purple-600 hover:text-purple-700'
-                >
-                  <span className='sr-only'>LinkedIn</span>
-                  <Linkedin className='size-6' />
-                </Link>
+                {SOCIAL_LINKS.map(link => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    target='_blank'
+                    className='text-purple-600 hover:text-purple-700'
+                  >
+                    <span className='sr-only'>{link.name}</span>
+                    <link.icon className='size-6' />
+                  </Link>
+                ))}
               </div>
             </CardContent>
           </Card>

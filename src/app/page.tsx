@@ -1,13 +1,13 @@
 // Components
-import { Header } from '@/components/header/Header';
-import { AbstractedShapes } from '@/components/home/AbstractedShapes';
+import { AppHeader } from '@/components/header';
+import { AbstractedShapes } from '@/components/utils';
 import {
   AboutSection,
   ContactSection,
   FeaturedSection,
   HeroSection,
 } from '@/components/home';
-import { Footer } from '@/components/footer/Footer';
+import { AppFooter } from '@/components/footer';
 
 /**
  * The Home component
@@ -19,7 +19,7 @@ export default function HomePage() {
     <div className='min-h-full w-full h-full relative overflow-y-auto'>
       <AbstractedShapes />
 
-      <Header className='mb-8' />
+      <AppHeader className='mb-8' />
 
       <main className='relative z-10 flex flex-col gap-8 min-h-dvh max-w-screen-xl mx-auto p-4'>
         <HeroSection className='sm:mb-14' />
@@ -31,7 +31,7 @@ export default function HomePage() {
         <ContactSection />
       </main>
 
-      <Footer />
+      <AppFooter />
     </div>
   );
 }

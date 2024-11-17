@@ -10,5 +10,7 @@ import { CldImage, type CldImageProps } from 'next-cloudinary';
  * @returns The CloudinaryImage component
  */
 export const CloudinaryImage = (props: CldImageProps) => {
-  return <CldImage {...props} />;
+  return (
+    <CldImage {...props} draggable={false} className={`select-none ${props.className}`} />
+  );
 };

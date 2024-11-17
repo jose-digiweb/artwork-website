@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextGradientClip } from '../utils';
+import { TextGradientClip } from '../../utils';
 import { cn } from '@/lib/utils';
 
 // Types
