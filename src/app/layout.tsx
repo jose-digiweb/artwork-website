@@ -48,6 +48,9 @@ export default function RootLayout({
       />
       <meta property='og:image' content='/openg.jpg' />
 
+      <meta property='og:image:width' content='300' />
+      <meta property='og:image:height' content='300' />
+
       <meta name='twitter:card' content='summary_large_image' />
       <meta property='twitter:domain' content='bangeyhodhy.com' />
       <meta property='twitter:url' content='https://bangeyhodhy.com' />
