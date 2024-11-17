@@ -1,4 +1,5 @@
 // Dependencies
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Kaushan_Script } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
@@ -44,11 +45,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='font-[family-name:var(--font-geist-sans)]'>
+      {/* Favicons */}
       <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
       <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
       <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
       <link rel='manifest' href='/site.webmanifest' />
 
+      {/* Open Graph */}
       <meta property='og:type' content='website' />
       <meta property='og:url' content='https://bangeyhodhy.com' />
       <meta property='og:title' content='BangeYhodhy Abstract Painting' />
@@ -57,9 +60,7 @@ export default function RootLayout({
         property='og:description'
         content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
       />
-
       <meta property='og:image' content='/openg.jpg' />
-
       <meta name='twitter:card' content='summary_large_image' />
       <meta property='twitter:domain' content='bangeyhodhy.com' />
       <meta property='twitter:url' content='https://bangeyhodhy.com' />
@@ -70,10 +71,12 @@ export default function RootLayout({
       />
       <meta name='twitter:image' content='/openg.jpg' />
 
+      {/* Body */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} antialiased w-full h-dvh overflow-hidden bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -12,7 +12,7 @@ import { AppFooter } from '@/components/footer';
 /**
  * The Home component
  * @description A component that displays the home page
- * @returns The Home component
+ * @returns {React.ReactNode} The Home component
  */
 export default function HomePage() {
   return (
