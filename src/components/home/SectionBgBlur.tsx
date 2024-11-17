@@ -8,7 +8,7 @@ type Props = {
 
 export const SectionBgBlur = ({ className, children, ...props }: Props) => {
   return (
-    <div className={cn('bg-white/60 backdrop-blur-md', className)} {...props}>
+    <div className={cn('bg-white/60 backdrop-blur-md rounded-xl', className)} {...props}>
       {children}
     </div>
   );

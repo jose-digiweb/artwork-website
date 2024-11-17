@@ -6,19 +6,28 @@ import { TextGradientClip } from '../utils';
 import { Button } from '../ui/button';
 import { GalleryVertical } from 'lucide-react';
 import { CloudinaryImage } from '../cloudinary';
+import { cn } from '@/lib/utils';
+
+// Types
+type Props = {
+  className?: string;
+};
 
 /**
  * The HeroSection component
  * @description A component that displays the hero section of the home page
  * @returns {JSX.Element} The HeroSection component
  */
-export const HeroSection = () => {
+export const HeroSection = ({ className }: Props) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className='flex flex-col md:flex-row items-center md:justify-start w-full py-4 md:gap-24 sm:mb-8'
+      className={cn(
+        'flex flex-col md:flex-row items-center md:justify-start w-full py-4 md:gap-24',
+        className
+      )}
     >
       <div className='w-full md:w-1/2 text-center md:text-left order-2 md:order-1s'>
         <h1 className='text-5xl font-bold text-gray-800 mb-2 tracking-tight'>
@@ -32,14 +41,14 @@ export const HeroSection = () => {
           inspiration from my surroundings, my emotions, and my innermost thoughts.
         </p>
 
-        <Button className='gap-4'>
+        <Button className='gap-4 hover:scale-105'>
           <GalleryVertical />
 
           <span>Explore Gallery</span>
         </Button>
       </div>
 
-      <div className='relative size-64 order-1 md:order-2 shrink-0 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl mb-6 sm:md-0'>
+      <div className='relative ring-8 bg-white/10 backdrop-blur-lg ring-primary/10 size-64 order-1 md:order-2 shrink-0 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl mb-6 sm:md-0'>
         <CloudinaryImage
           fill
           priority

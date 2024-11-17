@@ -40,7 +40,7 @@ const FeaturedImages = [
 export const Gallery = () => {
   return (
     <LightGallery selector='a' speed={500} plugins={[lgThumbnail, lgZoom]}>
-      <section className='grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8'>
+      <div className='grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8'>
         {FeaturedImages.map((image, i) => (
           <Link
             key={i}
@@ -65,7 +65,7 @@ export const Gallery = () => {
             </div>
           </Link>
         ))}
-      </section>
+      </div>
     </LightGallery>
   );
 };

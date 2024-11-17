@@ -11,37 +11,35 @@ export const Header = ({ className }: { className?: string }) => {
   return (
     <header
       className={cn(
-        'z-50 w-full mb-8 sticky top-0 bg-white/30 backdrop-blur-md shadow',
+        'z-50 w-full flex flex-col sticky top-0 bg-white/50 backdrop-blur-md shadow p-4',
         className
       )}
     >
-      <div className='container mx-auto px-6 py-4'>
-        <div className='flex items-center justify-between'>
-          <Link href='/' className='text-gray-800 text-2xl font-bold'>
-            Bange Yhodhy
-          </Link>
+      <div className='flex items-center justify-between max-w-screen-xl mx-auto w-full gap-4'>
+        <Link href='/' className='text-gray-800 text-2xl font-bold'>
+          Bange Yhodhy
+        </Link>
 
-          <nav className='hidden md:flex space-x-6'>
-            <NavLink href='/#'>Gallery</NavLink>
-            <NavLink href='/#'>About Me</NavLink>
-            <NavLink href='/#'>Contact</NavLink>
-          </nav>
+        <nav className='hidden md:flex space-x-6'>
+          <NavLink href='/#'>Gallery</NavLink>
+          <NavLink href='/#'>About Me</NavLink>
+          <NavLink href='/#'>Contact</NavLink>
+        </nav>
 
-          <Button
-            variant='ghost'
-            size='icon'
-            aria-label='Toggle menu'
-            data-open={isMenuOpen}
-            className='md:hidden hover:bg-white/30 transition-colors group'
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <div className='flex flex-col gap-2 w-8'>
-              <div className='rounded-2xl h-[3px] w-1/2 bg-black duration-500 group-data-[open=true]:rotate-[225deg] origin-right group-data-[open=true]:-translate-x-[12px] group-data-[open=true]:-translate-y-[1px]' />
-              <div className='rounded-2xl h-[3px] w-full bg-black duration-500 group-data-[open=true]:-rotate-45' />
-              <div className='rounded-2xl h-[3px] w-1/2 bg-black duration-500 place-self-end group-data-[open=true]:rotate-[225deg] origin-left group-data-[open=true]:translate-x-[12px] group-data-[open=true]:translate-y-[1px]' />
-            </div>
-          </Button>
-        </div>
+        <Button
+          variant='ghost'
+          size='icon'
+          aria-label='Toggle menu'
+          data-open={isMenuOpen}
+          className='md:hidden hover:bg-white/30 transition-colors group'
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <div className='flex flex-col gap-2 w-8'>
+            <div className='rounded-2xl h-[3px] w-1/2 bg-black duration-500 group-data-[open=true]:rotate-[225deg] origin-right group-data-[open=true]:-translate-x-[12px] group-data-[open=true]:-translate-y-[1px]' />
+            <div className='rounded-2xl h-[3px] w-full bg-black duration-500 group-data-[open=true]:-rotate-45' />
+            <div className='rounded-2xl h-[3px] w-1/2 bg-black duration-500 place-self-end group-data-[open=true]:rotate-[225deg] origin-left group-data-[open=true]:translate-x-[12px] group-data-[open=true]:translate-y-[1px]' />
+          </div>
+        </Button>
       </div>
 
       <AnimatePresence>

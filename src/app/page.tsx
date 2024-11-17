@@ -19,10 +19,10 @@ export default function HomePage() {
     <div className='min-h-full w-full h-full bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 relative overflow-y-auto'>
       <AbstractedShapes />
 
-      <Header />
+      <Header className='mb-8' />
 
-      <main className='relative z-10 flex flex-col items-center gap-8 justify-center min-h-dvh px-4 lg:px-12 max-w-screen-xl mx-auto'>
-        <HeroSection />
+      <main className='relative z-10 flex flex-col gap-8 min-h-dvh max-w-screen-xl mx-auto p-4'>
+        <HeroSection className='sm:mb-14' />
 
         <FeaturedSection />
 
