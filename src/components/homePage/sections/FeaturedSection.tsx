@@ -13,7 +13,7 @@ import lgZoom from "lightgallery/plugins/zoom";
 // Components
 import LightGallery from "lightgallery/react";
 import { motion } from "framer-motion";
-import { SectionTitle, SectionBgBlur } from "../utils";
+import { SectionTitle, SectionBgBlur } from "../../utils";
 import { CloudinaryImage } from "../../cloudinary";
 import Link from "next/link";
 

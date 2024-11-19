@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight, Paintbrush, Palette, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CloudinaryImage } from "../../../cloudinary";
-import { SectionTitle, SectionBgBlur } from "../../utils";
+import { SectionTitle, SectionBgBlur } from "../../../utils";
 import Link from "next/link";
 
 // Types

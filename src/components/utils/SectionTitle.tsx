@@ -1,5 +1,5 @@
 import React from "react";
-import { TextGradientClip } from "../../utils";
+import { TextGradientClip } from ".";
 import { cn } from "@/lib/utils";
 
 // Types
@@ -15,7 +15,7 @@ export const SectionTitle = ({ id, title, description, className }: Props) => {
     <div
       id={id}
       className={cn(
-        "mb-6 flex scroll-mt-8 flex-col items-start justify-center text-center md:mb-0 md:py-4",
+        "mb-6 flex scroll-mt-14 flex-col items-start justify-center text-center md:mb-0 md:py-4",
         className,
       )}
     >

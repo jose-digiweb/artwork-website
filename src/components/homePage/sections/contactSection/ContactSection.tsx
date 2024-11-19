@@ -2,7 +2,7 @@
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader } from "../../../ui/card";
-import { SectionTitle, SectionBgBlur } from "../../utils";
+import { SectionTitle, SectionBgBlur } from "../../../utils";
 import { ContactForm } from "./ContactForm";
 import { cn } from "@/lib/utils";
 

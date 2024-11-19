@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 // Components
 import { CloudinaryImage } from "@/components/cloudinary";
-import { SectionBgBlur, SectionTitle } from "@/components/homePage/utils";
+import { SectionBgBlur, SectionTitle } from "../../utils";
 
 // Types
 type Props = {

@@ -16,7 +16,7 @@ import {
   DialogTrigger,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { SectionTitle } from "../homePage/utils";
+import { SectionTitle } from "../utils";
 import { CloudinaryImage } from "../cloudinary";
 import { FilterList } from "./FilterList";
 
