@@ -13,11 +13,6 @@ type Props = {
   className?: string;
 };
 
-/**
- * The HeroSection component
- * @description A component that displays the hero section of the home page
- * @returns {JSX.Element} The HeroSection component
- */
 export const HeroSection = ({ className }: Props) => {
   return (
     <motion.section
@@ -31,15 +26,17 @@ export const HeroSection = ({ className }: Props) => {
     >
       <div className="md:order-1s order-2 w-full text-center md:w-1/2 md:text-left">
         <h1 className="mb-2 text-5xl font-bold tracking-tight text-gray-800">
-          Hi, I&apos;m <TextGradientClip>Bange Yhodhy</TextGradientClip>
+          About <TextGradientClip>Bange Yhodhy</TextGradientClip>
         </h1>
-        <p className="mb-4 text-xl text-gray-800 sm:text-3xl">
-          and I love <TextGradientClip>abstract paintings.</TextGradientClip>
+
+        <p className="mb-4 text-lg leading-relaxed text-gray-600">
+          Abstract artist, color enthusiast, and emotion translator.
         </p>
         <p className="mb-8 leading-relaxed text-gray-500">
-          My artwork is a vibrant exploration of color, form, and texture.{" "}
-          <br /> I draw inspiration from my surroundings, my emotions, and my
-          innermost thoughts.
+          Welcome to my world of vibrant abstractions and emotive art. I&apos;m
+          Bange Yhodhy, an artist dedicated to exploring the depths of human
+          emotion through color, form, and texture. My journey in the world of
+          abstract art has been one of constant discovery and growth.
         </p>
 
         <Button className="gap-4 hover:scale-105">

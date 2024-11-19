@@ -7,11 +7,12 @@ import "./globals.css";
 import Head from "next/head";
 import { Toaster } from "sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { AppLayout } from "@/components/AppLayout";
 
 // Types
 import type { Metadata } from "next";
 import { AbstractedShapes } from "@/components/utils";
+import { AppHeader } from "@/components/appHeader";
+import { AppFooter } from "@/components/appFooter";
 
 // Fonts
 const geistSans = localFont({
@@ -50,7 +51,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="font-[family-name:var(--font-geist-sans)]">
+    <html
+      lang="en"
+      className="scroll-smooth font-[family-name:var(--font-geist-sans)]"
+    >
       <Head>
         {/* Favicons */}
         <link
@@ -106,9 +110,12 @@ export default function RootLayout({
       </Head>
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} h-full min-h-dvh scroll-smooth bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} h-full min-h-dvh bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 antialiased`}
       >
-        <AppLayout>{children}</AppLayout>
+        <AppHeader className="sticky top-0 z-50 mb-8" />
+        {children}
+        <AppFooter className="mt-8" />
+
         <Toaster />
         <AbstractedShapes />
         <SpeedInsights />

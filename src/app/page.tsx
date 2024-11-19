@@ -8,7 +8,7 @@ import * as Home from "@/components/homePage";
  */
 export default function HomePage() {
   return (
-    <section className="mx-auto flex h-full w-full max-w-screen-xl flex-col gap-8 p-4">
+    <section className="z-10 mx-auto flex h-full w-full max-w-screen-xl flex-col gap-8 p-4">
       <Home.HeroSection className="mb-8 sm:mb-14" />
 
       <Home.FeaturedSection />
