@@ -2,10 +2,11 @@
 
 // Dependencies
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+import React, { useMemo, useState } from "react";
 
 // Components
 import Link, { LinkProps } from "next/link";
-import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -78,7 +79,7 @@ export const AppHeader = ({ className }: Props) => {
                   About Me
                 </NavLink>
                 <NavLink
-                  href="/#contact-section"
+                  href="#contact-section"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
@@ -100,10 +101,19 @@ function NavLink({
   href: string;
   children: React.ReactNode;
 } & LinkProps) {
+  const pathname = usePathname();
+
+  const isActive = useMemo(() => pathname === href, [pathname, href]);
+
   return (
     <Link
       href={href}
-      className="text-gray-600 transition-colors hover:text-gray-800"
+      className={cn(
+        "text-gray-600 transition-colors hover:text-gray-800 hover:text-primary",
+        {
+          "text-primary": isActive,
+        },
+      )}
       {...props}
     >
       {children}
