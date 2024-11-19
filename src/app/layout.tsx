@@ -9,6 +9,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // Types
 import type { Metadata } from 'next';
+import Head from 'next/head';
 
 // Fonts
 const geistSans = localFont({
@@ -48,37 +49,42 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='font-[family-name:var(--font-geist-sans)]'>
-      {/* Favicons */}
-      <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
-      <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
-      <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
-      <link rel='manifest' href='/site.webmanifest' />
+      <Head>
+        {/* Favicons */}
+        <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+        <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+        <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
+        <link rel='manifest' href='/site.webmanifest' />
 
-      {/* Open Graph */}
-      <meta property='og:type' content='website' />
-      <meta property='og:url' content='https://bangeyhodhy.com' />
-      <meta property='og:title' content='BangeYhodhy Abstract Painting' />
-      <meta property='og:site_name' content='BangeYhodhy Abstract Painting' />
-      <meta
-        property='og:description'
-        content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
-      />
-      <meta property='og:image' content='/openg.jpg' />
-      <meta property='og:image:width' content='300' />
-      <meta property='og:image:height' content='300' />
-      <meta property='og:image:alt' content='BangeYhodhy Abstract Painting' />
-      <meta property='og:image:type' content='image/jpeg' />
-      <meta property='og:image:secure_url' content='https://bangeyhodhy.com/openg.jpg' />
-      <meta property='og:image:url' content='https://bangeyhodhy.com/openg.jpg' />
-      <meta name='twitter:card' content='summary_large_image' />
-      <meta property='twitter:domain' content='bangeyhodhy.com' />
-      <meta property='twitter:url' content='https://bangeyhodhy.com' />
-      <meta name='twitter:title' content='BangeYhodhy Abstract Painting' />
-      <meta
-        name='twitter:description'
-        content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
-      />
-      <meta name='twitter:image' content='/openg.jpg' />
+        {/* Open Graph */}
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://bangeyhodhy.com' />
+        <meta property='og:title' content='BangeYhodhy Abstract Painting' />
+        <meta property='og:site_name' content='BangeYhodhy Abstract Painting' />
+        <meta
+          property='og:description'
+          content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
+        />
+        <meta property='og:image' content='/openg.jpg' />
+        <meta property='og:image:width' content='300' />
+        <meta property='og:image:height' content='300' />
+        <meta property='og:image:alt' content='BangeYhodhy Abstract Painting' />
+        <meta property='og:image:type' content='image/jpeg' />
+        <meta
+          property='og:image:secure_url'
+          content='https://bangeyhodhy.com/openg.jpg'
+        />
+        <meta property='og:image:url' content='https://bangeyhodhy.com/openg.jpg' />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='twitter:domain' content='bangeyhodhy.com' />
+        <meta property='twitter:url' content='https://bangeyhodhy.com' />
+        <meta name='twitter:title' content='BangeYhodhy Abstract Painting' />
+        <meta
+          name='twitter:description'
+          content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
+        />
+        <meta name='twitter:image' content='/openg.jpg' />
+      </Head>
 
       {/* Body */}
       <body

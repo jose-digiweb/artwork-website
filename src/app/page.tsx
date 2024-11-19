@@ -11,12 +11,15 @@ import { AppFooter } from '@/components/appFooter';
  */
 export default function HomePage() {
   return (
-    <div className='min-h-full w-full h-full relative overflow-y-auto scroll-smooth'>
+    <main
+      role='main'
+      className='min-h-full w-full h-full relative overflow-y-auto scroll-smooth'
+    >
       <AbstractedShapes />
 
       <AppHeader className='mb-8' />
 
-      <main className='relative z-10 flex flex-col gap-8 min-h-dvh max-w-screen-xl mx-auto p-4'>
+      <div className='relative z-10 flex flex-col gap-8 min-h-dvh max-w-screen-xl mx-auto p-4'>
         <Home.HeroSection className='sm:mb-14' />
 
         <Home.FeaturedSection />
@@ -24,9 +27,9 @@ export default function HomePage() {
         <Home.AboutSection />
 
         <Home.ContactSection />
-      </main>
+      </div>
 
       <AppFooter />
-    </div>
+    </main>
   );
 }

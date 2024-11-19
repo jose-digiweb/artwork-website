@@ -10,12 +10,16 @@ export const AppHeader = ({ className }: { className?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header
+      role='banner'
       className={cn(
         'z-50 w-full flex flex-col sticky top-0 bg-white/50 backdrop-blur-md shadow p-4',
         className
       )}
     >
-      <div className='flex items-center justify-between max-w-screen-xl mx-auto w-full gap-4'>
+      <nav
+        role='navigation'
+        className='flex items-center justify-between max-w-screen-xl mx-auto w-full gap-4'
+      >
         <Link
           href='/'
           className='text-gray-800 text-2xl font-bold font-[family-name:var(--font-kushan)]'
@@ -23,11 +27,11 @@ export const AppHeader = ({ className }: { className?: string }) => {
           Bange Yhodhy
         </Link>
 
-        <nav className='hidden md:flex gap-6 font-medium'>
+        <div className='hidden md:flex gap-6 font-medium'>
           <NavLink href='/#'>Gallery</NavLink>
           <NavLink href='/#'>About Me</NavLink>
           <NavLink href='/#contact-section'>Contact</NavLink>
-        </nav>
+        </div>
 
         <Button
           variant='ghost'
@@ -43,11 +47,12 @@ export const AppHeader = ({ className }: { className?: string }) => {
             <div className='rounded-2xl h-[3px] w-1/2 bg-black duration-500 place-self-end group-data-[open=true]:rotate-[225deg] origin-left group-data-[open=true]:translate-x-[12px] group-data-[open=true]:translate-y-[1px]' />
           </div>
         </Button>
-      </div>
+      </nav>
 
       <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
+        {isMenuOpen ? (
+          <motion.nav
+            role='navigation'
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -55,7 +60,7 @@ export const AppHeader = ({ className }: { className?: string }) => {
             className='md:hidden absolute top-full inset-x-0 overflow-hidden bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 drop-shadow-md z-50'
           >
             <div className='container mx-auto px-6 py-4'>
-              <nav className='flex flex-col space-y-4 items-end text-xl'>
+              <div className='flex flex-col space-y-4 items-end text-xl'>
                 <NavLink href='/#' onClick={() => setIsMenuOpen(false)}>
                   Gallery
                 </NavLink>
@@ -65,10 +70,10 @@ export const AppHeader = ({ className }: { className?: string }) => {
                 <NavLink href='/#' onClick={() => setIsMenuOpen(false)}>
                   Contact
                 </NavLink>
-              </nav>
+              </div>
             </div>
-          </motion.div>
-        )}
+          </motion.nav>
+        ) : null}
       </AnimatePresence>
     </header>
   );
