@@ -7,6 +7,7 @@ import { Button } from "../../ui/button";
 import { GalleryVertical } from "lucide-react";
 import { CloudinaryImage } from "../../cloudinary";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 // Types
 type Props = {
@@ -39,11 +40,13 @@ export const HeroSection = ({ className }: Props) => {
           abstract art has been one of constant discovery and growth.
         </p>
 
-        <Button className="gap-4 hover:scale-105">
-          <GalleryVertical />
+        <Link href="/gallery">
+          <Button className="gap-4 hover:scale-105">
+            <GalleryVertical />
 
-          <span>Explore Gallery</span>
-        </Button>
+            <span>Explore Gallery</span>
+          </Button>
+        </Link>
       </div>
 
       <div className="relative order-1 mb-6 size-64 shrink-0 overflow-hidden rounded-full bg-white/10 shadow-2xl ring-8 ring-primary/10 backdrop-blur-lg md:order-2 md:size-80">

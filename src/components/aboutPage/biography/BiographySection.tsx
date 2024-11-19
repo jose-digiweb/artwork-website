@@ -21,9 +21,7 @@ type Props = {
  */
 export const BiographySection = ({ className }: Props) => {
   return (
-    <section
-      className={cn("z-10 grid grid-cols-1 grid-rows-[auto,1fr]", className)}
-    >
+    <section className={cn("grid grid-cols-1 grid-rows-[auto,1fr]", className)}>
       <SectionTitle
         title="Biography"
         description="The story behind the artist"

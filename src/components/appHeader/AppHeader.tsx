@@ -39,7 +39,7 @@ export const AppHeader = ({ className }: Props) => {
         </Link>
 
         <div className="hidden gap-6 font-medium md:flex">
-          <NavLink href="/#">Gallery</NavLink>
+          <NavLink href="/gallery">Gallery</NavLink>
           <NavLink href="/about">About Me</NavLink>
           <NavLink href="/#contact-section">Contact</NavLink>
         </div>

@@ -103,7 +103,7 @@ export function AboutSection({ className }: Props) {
                         {card.content}
 
                         <Link
-                          href="/"
+                          href="/about"
                           className="group mt-2 flex w-min items-center text-sm text-primary hover:underline"
                         >
                           <span className="truncate font-semibold">

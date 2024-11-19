@@ -8,7 +8,7 @@ import * as About from "@/components/aboutPage";
  */
 export default function aboutPage() {
   return (
-    <section className="z-10 mx-auto flex h-full w-full max-w-screen-xl flex-col gap-8 p-4">
+    <section className="mx-auto flex h-full w-full max-w-screen-xl flex-col gap-8 p-4">
       <About.HeroSection className="mb-8 sm:mb-14" />
 
       <About.BiographySection />

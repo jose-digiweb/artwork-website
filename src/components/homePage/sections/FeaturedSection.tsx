@@ -1,23 +1,21 @@
 "use client";
 
-// Dependencies
-import LightGallery from "lightgallery/react";
-
 // import styles
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 
-// import plugins if you need
+// Dependencies
+import { cn } from "@/lib/utils";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
 // Components
+import LightGallery from "lightgallery/react";
 import { motion } from "framer-motion";
 import { SectionTitle, SectionBgBlur } from "../utils";
 import { CloudinaryImage } from "../../cloudinary";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 
 // Types
 type Props = {
