@@ -1,8 +1,11 @@
 // Dependencies
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Kaushan_Script } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
+
+// Components
+import { Toaster } from 'sonner';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // Types
 import type { Metadata } from 'next';
@@ -61,6 +64,12 @@ export default function RootLayout({
         content='Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.'
       />
       <meta property='og:image' content='/openg.jpg' />
+      <meta property='og:image:width' content='300' />
+      <meta property='og:image:height' content='300' />
+      <meta property='og:image:alt' content='BangeYhodhy Abstract Painting' />
+      <meta property='og:image:type' content='image/jpeg' />
+      <meta property='og:image:secure_url' content='https://bangeyhodhy.com/openg.jpg' />
+      <meta property='og:image:url' content='https://bangeyhodhy.com/openg.jpg' />
       <meta name='twitter:card' content='summary_large_image' />
       <meta property='twitter:domain' content='bangeyhodhy.com' />
       <meta property='twitter:url' content='https://bangeyhodhy.com' />
@@ -76,6 +85,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} antialiased w-full h-dvh overflow-hidden bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100`}
       >
         {children}
+        <Toaster />
         <SpeedInsights />
       </body>
     </html>

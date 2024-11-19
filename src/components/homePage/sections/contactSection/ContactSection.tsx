@@ -1,12 +1,9 @@
 // Dependencies
 import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
-import React from 'react';
-import { Button } from '../ui/button';
-import { Card, CardContent, CardHeader } from '../ui/card';
-import { Input } from '../ui/input';
-import { Textarea } from '../ui/textarea';
-import { SectionTitle, SectionBgBlur } from './utils';
+import { Card, CardContent, CardHeader } from '../../../ui/card';
+import { SectionTitle, SectionBgBlur } from '../../utils';
+import { ContactForm } from './ContactForm';
 
 const SOCIAL_LINKS = [
   {
@@ -24,22 +21,15 @@ const SOCIAL_LINKS = [
 export const ContactSection = () => {
   return (
     <section className='w-full flex flex-col rounded-lg pb-4'>
-      <SectionTitle title='Contact Me' description='Get in touch with Bange Yhodhy.' />
+      <SectionTitle
+        id='contact-section'
+        title='Contact Me'
+        description='Get in touch with Bange Yhodhy.'
+      />
 
       <SectionBgBlur className='flex flex-col md:flex-row gap-8 p-4'>
         <div className='md:w-1/2'>
-          <form className='space-y-4'>
-            <Input type='text' placeholder='Your Name' aria-label='Your Name' />
-            <Input type='email' placeholder='Your Email' aria-label='Your Email' />
-            <Input type='text' placeholder='Subject' aria-label='Subject' />
-            <Textarea placeholder='Your Message' aria-label='Your Message' rows={4} />
-            <Button
-              type='button'
-              className='w-full bg-purple-600 hover:bg-purple-700 mt-auto'
-            >
-              Send Message
-            </Button>
-          </form>
+          <ContactForm />
         </div>
 
         <div className='md:w-1/2'>

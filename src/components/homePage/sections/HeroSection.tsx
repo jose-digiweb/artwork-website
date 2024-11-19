@@ -2,10 +2,10 @@
 
 // Components
 import { motion } from 'framer-motion';
-import { TextGradientClip } from '../utils';
-import { Button } from '../ui/button';
+import { TextGradientClip } from '../../utils';
+import { Button } from '../../ui/button';
 import { GalleryVertical } from 'lucide-react';
-import { CloudinaryImage } from '../cloudinary';
+import { CloudinaryImage } from '../../cloudinary';
 import { cn } from '@/lib/utils';
 
 // Types

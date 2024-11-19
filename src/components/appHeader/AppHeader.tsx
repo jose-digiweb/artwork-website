@@ -26,7 +26,7 @@ export const AppHeader = ({ className }: { className?: string }) => {
         <nav className='hidden md:flex gap-6 font-medium'>
           <NavLink href='/#'>Gallery</NavLink>
           <NavLink href='/#'>About Me</NavLink>
-          <NavLink href='/#'>Contact</NavLink>
+          <NavLink href='/#contact-section'>Contact</NavLink>
         </nav>
 
         <Button

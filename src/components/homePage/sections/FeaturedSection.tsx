@@ -14,8 +14,8 @@ import lgZoom from 'lightgallery/plugins/zoom';
 
 // Components
 import { motion } from 'framer-motion';
-import { SectionTitle, SectionBgBlur } from './utils';
-import { CloudinaryImage } from '../cloudinary';
+import { SectionTitle, SectionBgBlur } from '../utils';
+import { CloudinaryImage } from '../../cloudinary';
 import Link from 'next/link';
 
 const FeaturedImages = [
