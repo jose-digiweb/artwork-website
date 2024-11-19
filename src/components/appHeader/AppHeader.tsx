@@ -74,10 +74,13 @@ export const AppHeader = ({ className }: Props) => {
                 <NavLink href="/#" onClick={() => setIsMenuOpen(false)}>
                   Gallery
                 </NavLink>
-                <NavLink href="/#" onClick={() => setIsMenuOpen(false)}>
+                <NavLink href="/about" onClick={() => setIsMenuOpen(false)}>
                   About Me
                 </NavLink>
-                <NavLink href="/#" onClick={() => setIsMenuOpen(false)}>
+                <NavLink
+                  href="/#contact-section"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Contact
                 </NavLink>
               </div>
