@@ -71,7 +71,7 @@ export const AppHeader = ({ className }: Props) => {
           >
             <div className="container mx-auto px-6 py-4">
               <div className="flex flex-col items-end space-y-4 text-xl">
-                <NavLink href="/#" onClick={() => setIsMenuOpen(false)}>
+                <NavLink href="/gallery" onClick={() => setIsMenuOpen(false)}>
                   Gallery
                 </NavLink>
                 <NavLink href="/about" onClick={() => setIsMenuOpen(false)}>
