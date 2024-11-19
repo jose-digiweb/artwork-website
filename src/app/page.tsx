@@ -1,8 +1,5 @@
 // Components
-import { AppHeader } from '@/components/appHeader';
-import { AbstractedShapes } from '@/components/utils';
-import * as Home from '@/components/homePage';
-import { AppFooter } from '@/components/appFooter';
+import * as Home from "@/components/homePage";
 
 /**
  * The Home component
@@ -11,25 +8,14 @@ import { AppFooter } from '@/components/appFooter';
  */
 export default function HomePage() {
   return (
-    <main
-      role='main'
-      className='min-h-full w-full h-full relative overflow-y-auto scroll-smooth'
-    >
-      <AbstractedShapes />
+    <section className="mx-auto flex h-full w-full max-w-screen-xl flex-col gap-8 p-4">
+      <Home.HeroSection className="mb-8 sm:mb-14" />
 
-      <AppHeader className='mb-8' />
+      <Home.FeaturedSection />
 
-      <div className='relative z-10 flex flex-col gap-8 min-h-dvh max-w-screen-xl mx-auto p-4'>
-        <Home.HeroSection className='sm:mb-14' />
+      <Home.AboutSection />
 
-        <Home.FeaturedSection />
-
-        <Home.AboutSection />
-
-        <Home.ContactSection />
-      </div>
-
-      <AppFooter />
-    </main>
+      <Home.ContactSection />
+    </section>
   );
 }

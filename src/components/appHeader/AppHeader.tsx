@@ -10,16 +10,12 @@ export const AppHeader = ({ className }: { className?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header
-      role='banner'
       className={cn(
         'z-50 w-full flex flex-col sticky top-0 bg-white/50 backdrop-blur-md shadow p-4',
         className
       )}
     >
-      <nav
-        role='navigation'
-        className='flex items-center justify-between max-w-screen-xl mx-auto w-full gap-4'
-      >
+      <nav className='flex items-center justify-between max-w-screen-xl mx-auto w-full gap-4'>
         <Link
           href='/'
           className='text-gray-800 text-2xl font-bold font-[family-name:var(--font-kushan)]'
@@ -29,7 +25,7 @@ export const AppHeader = ({ className }: { className?: string }) => {
 
         <div className='hidden md:flex gap-6 font-medium'>
           <NavLink href='/#'>Gallery</NavLink>
-          <NavLink href='/#'>About Me</NavLink>
+          <NavLink href='/about'>About Me</NavLink>
           <NavLink href='/#contact-section'>Contact</NavLink>
         </div>
 
@@ -52,7 +48,6 @@ export const AppHeader = ({ className }: { className?: string }) => {
       <AnimatePresence>
         {isMenuOpen ? (
           <motion.nav
-            role='navigation'
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
