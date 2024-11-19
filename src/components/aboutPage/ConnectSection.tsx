@@ -1,7 +1,7 @@
 import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { SectionBgBlur, SectionTitle } from "../homePage/utils";
+import { SectionBgBlur, SectionTitle } from "../utils";
 import { cn } from "@/lib/utils";
 
 // Types
