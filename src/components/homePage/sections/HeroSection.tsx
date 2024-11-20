@@ -56,10 +56,13 @@ export const HeroSection = ({ className }: Props) => {
         <CloudinaryImage
           fill
           priority
-          format="auto"
-          aspectRatio="1:1"
+          crop={{
+            type: "scale",
+            source: true,
+            width: 300,
+            aspectRatio: "1:1",
+          }}
           sizes="(max-width: 768px) 320px, 640px"
-          crop="auto"
           alt="Bange Yhodhy"
           src="https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256581/bange_yhodhy_ub8mki.png"
           className="rounded-full object-cover"

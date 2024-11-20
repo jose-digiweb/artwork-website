@@ -145,6 +145,12 @@ export function GalleryPage() {
                         alt={artwork.title}
                         width={400}
                         height={300}
+                        crop={{
+                          type: "scale",
+                          source: true,
+                          width: 400,
+                          aspectRatio: "4:5",
+                        }}
                         className="h-64 w-full object-cover"
                       />
                       <div className="p-4">
@@ -169,6 +175,11 @@ export function GalleryPage() {
                       alt={artwork.title}
                       width={600}
                       height={450}
+                      crop={{
+                        type: "scale",
+                        source: true,
+                        width: 500,
+                      }}
                       className="h-auto w-full rounded-lg object-cover"
                     />
 

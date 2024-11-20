@@ -52,9 +52,12 @@ export function AboutSection({ className }: Props) {
         <div className="relative hidden aspect-[3/3] overflow-hidden rounded-lg md:flex md:w-96">
           <CloudinaryImage
             fill
-            format="auto"
-            aspectRatio="4:5"
-            crop={{ type: "thumb", source: true }}
+            crop={{
+              type: "scale",
+              source: true,
+              width: 400,
+              aspectRatio: "4:5",
+            }}
             className="rounded-lg object-cover"
             alt="Bange Yhodhy in the studio"
             src="https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731783497/by-insta-1_itbmzd.jpg"

@@ -71,11 +71,11 @@ export const FeaturedSection = ({ className }: Props) => {
                   fill
                   priority
                   crop={{
-                    type: "thumb",
+                    type: "scale",
                     source: true,
+                    width: 400,
+                    aspectRatio: "4:5",
                   }}
-                  format="auto"
-                  aspectRatio="4:5"
                   src={image.src}
                   alt={`Featured Artwork ${image.title}`}
                   className="object-cover transition-transform duration-300 sm:group-hover:scale-110"
