@@ -1,5 +1,6 @@
 // Components
 import * as About from "@/components/aboutPage";
+import { AppPage } from "@/components/utils";
 
 /**
  * The About page
@@ -8,12 +9,12 @@ import * as About from "@/components/aboutPage";
  */
 export default function aboutPage() {
   return (
-    <section className="mx-auto flex h-full w-full max-w-screen-xl flex-col gap-8 p-4">
+    <AppPage className="gap-8">
       <About.HeroSection className="mb-8 sm:mb-14" />
 
       <About.BiographySection />
 
       <About.ConnectSection />
-    </section>
+    </AppPage>
   );
 }

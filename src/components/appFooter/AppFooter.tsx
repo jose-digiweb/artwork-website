@@ -17,7 +17,7 @@ export const AppFooter = ({ className }: Props) => {
   return (
     <footer
       className={cn(
-        "flex items-center justify-center bg-white/50 p-4 text-center backdrop-blur-sm",
+        "h-header flex items-center justify-center bg-white/50 p-4 text-center backdrop-blur-sm",
         className,
       )}
     >

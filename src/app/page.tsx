@@ -1,5 +1,6 @@
 // Components
 import * as Home from "@/components/homePage";
+import { AppPage } from "@/components/utils";
 
 /**
  * The Home component
@@ -8,7 +9,7 @@ import * as Home from "@/components/homePage";
  */
 export default function HomePage() {
   return (
-    <section className="mx-auto flex h-full w-full max-w-screen-xl flex-col gap-8 p-4">
+    <AppPage className="gap-8">
       <Home.HeroSection className="mb-8 sm:mb-14" />
 
       <Home.FeaturedSection />
@@ -16,6 +17,6 @@ export default function HomePage() {
       <Home.AboutSection />
 
       <Home.ContactSection />
-    </section>
+    </AppPage>
   );
 }

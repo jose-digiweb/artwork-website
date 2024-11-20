@@ -27,11 +27,11 @@ export const AppHeader = ({ className }: Props) => {
   return (
     <header
       className={cn(
-        "flex w-full flex-col bg-white/50 p-4 shadow backdrop-blur-md",
+        "flex h-min w-full shrink-0 grow-0 flex-col bg-white/50 px-4 shadow backdrop-blur-md",
         className,
       )}
     >
-      <nav className="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-4">
+      <nav className="h-header mx-auto flex w-full max-w-screen-xl shrink-0 grow-0 items-center justify-between gap-4">
         <Link
           href="/"
           className="font-[family-name:var(--font-kushan)] text-2xl font-bold text-gray-800"
@@ -43,6 +43,7 @@ export const AppHeader = ({ className }: Props) => {
           <NavLink href="/gallery">Gallery</NavLink>
           <NavLink href="/about">About Me</NavLink>
           <NavLink href="/#contact-section">Contact</NavLink>
+          <NavLink href="/admin">Admin</NavLink>
         </div>
 
         <Button
