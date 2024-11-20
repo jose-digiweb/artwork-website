@@ -145,6 +145,8 @@ export function GalleryPage() {
                         alt={artwork.title}
                         width={400}
                         height={300}
+                        quality="auto"
+                        format="auto"
                         crop={{
                           type: "scale",
                           source: true,
@@ -175,6 +177,8 @@ export function GalleryPage() {
                       alt={artwork.title}
                       width={600}
                       height={450}
+                      quality="auto"
+                      format="auto"
                       crop={{
                         type: "scale",
                         source: true,

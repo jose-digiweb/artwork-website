@@ -52,6 +52,8 @@ export function AboutSection({ className }: Props) {
         <div className="relative hidden aspect-[3/3] overflow-hidden rounded-lg md:flex md:w-96">
           <CloudinaryImage
             fill
+            quality="auto"
+            format="auto"
             crop={{
               type: "scale",
               source: true,

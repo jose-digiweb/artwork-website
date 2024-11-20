@@ -56,6 +56,8 @@ export const HeroSection = ({ className }: Props) => {
         <CloudinaryImage
           fill
           priority
+          quality="auto"
+          format="auto"
           crop={{
             type: "scale",
             source: true,

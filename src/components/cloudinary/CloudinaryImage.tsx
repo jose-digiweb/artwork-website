@@ -9,13 +9,9 @@ import { CldImage, type CldImageProps } from "next-cloudinary";
  * @param props - The props for the CldImage component
  * @returns The CloudinaryImage component
  */
-export const CloudinaryImage = (
-  props: Omit<CldImageProps, "quality" | "format">,
-) => {
+export const CloudinaryImage = (props: CldImageProps) => {
   return (
     <CldImage
-      quality="auto"
-      format="auto"
       {...props}
       draggable={false}
       className={`select-none ${props.className}`}

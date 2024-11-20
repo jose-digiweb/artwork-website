@@ -83,7 +83,14 @@ export const BiographySection = ({ className }: Props) => {
             <div className="relative aspect-[4/5] h-96 overflow-hidden">
               <CloudinaryImage
                 fill
-                aspectRatio="4:5"
+                quality="auto"
+                format="auto"
+                crop={{
+                  type: "scale",
+                  source: true,
+                  width: 300,
+                  aspectRatio: "4:5",
+                }}
                 src="https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731783497/by-insta-1_itbmzd.jpg"
                 alt="Bange Yhodhy in the studio"
                 className="h-full w-full object-cover"
