@@ -1,8 +1,8 @@
 "use client";
 
 // Dependencies
-import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 // Components
 import { Button } from "@/components/ui/button";
@@ -18,117 +18,37 @@ import {
 } from "@/components/ui/dialog";
 import { SectionTitle } from "../utils";
 import { CloudinaryImage } from "../cloudinary";
-import { FilterList } from "./FilterList";
 
-const artworks = [
-  {
-    id: 1,
-    title: "Emotional Cascade",
-    year: 2023,
-    size: "medium",
-    dimensions: '36" x 48"',
-    url: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-  },
-  {
-    id: 2,
-    title: "Vibrant Whispers",
-    year: 2022,
-    size: "small",
-    dimensions: '24" x 36"',
-    url: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-  },
-  {
-    id: 3,
-    title: "Serenity in Chaos",
-    year: 2023,
-    size: "large",
-    dimensions: '40" x 60"',
-    url: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-  },
-  {
-    id: 4,
-    title: "Chromatic Symphony",
-    year: 2021,
-    size: "medium",
-    dimensions: '30" x 30"',
-    url: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-  },
-  {
-    id: 5,
-    title: "Textural Landscape",
-    year: 2022,
-    size: "large",
-    dimensions: '48" x 36"',
-    url: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-  },
-  {
-    id: 6,
-    title: "Ethereal Dreams",
-    year: 2023,
-    size: "small",
-    dimensions: '24" x 48"',
-    url: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-  },
-  {
-    id: 7,
-    title: "Organic Formations",
-    year: 2021,
-    size: "medium",
-    dimensions: '36" x 36"',
-    url: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-  },
-  {
-    id: 8,
-    title: "Neon Emotions",
-    year: 2022,
-    size: "large",
-    dimensions: '40" x 40"',
-    url: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-  },
-  {
-    id: 9,
-    title: "Fluid Expressions",
-    year: 2023,
-    size: "medium",
-    dimensions: '30" x 48"',
-    url: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-  },
-];
+// Types
+import type { Artwork } from "@prisma/client";
+type Props = {
+  artWorks: Artwork[];
+  className?: string;
+};
 
 /**
  * The GalleryPage component
  * @description A component that displays the gallery page
  * @returns {JSX.Element} The GalleryPage component
  */
-export function GalleryPage() {
-  const [filter, setFilter] = useState("All");
-
-  const filteredArtworks = useMemo(() => {
-    return filter === "All"
-      ? artworks
-      : artworks.filter(
-          (artwork) =>
-            artwork.size.toLowerCase().trim() === filter.toLowerCase().trim(),
-        );
-  }, [filter]);
-
+export function GalleryPage({ artWorks, className }: Props) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex min-h-dvh flex-col"
+      className={cn("flex min-h-dvh flex-col", className)}
     >
       <SectionTitle
         title="Browse Artworks"
         description="Browse through the collection of artworks"
       />
 
-      <FilterList filter={filter} setFilter={setFilter} className="mb-6 mt-4" />
+      {/* <FilterList filter={filter} setFilter={setFilter} className="mb-6 mt-4" /> */}
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
-          {filteredArtworks.map((artwork) => (
+          {artWorks.map((artwork) => (
             <motion.div
               key={artwork.id}
               initial={{ opacity: 0 }}
@@ -141,7 +61,7 @@ export function GalleryPage() {
                   <Card className="cursor-pointer transition-shadow hover:shadow-lg">
                     <CardContent className="overflow-hidden rounded-xl p-0">
                       <CloudinaryImage
-                        src={artwork.url}
+                        src={artwork.imagePublicId}
                         alt={artwork.title}
                         width={400}
                         height={300}
@@ -170,10 +90,10 @@ export function GalleryPage() {
                   </Card>
                 </DialogTrigger>
 
-                <DialogContent className="flex max-h-full max-w-3xl flex-col overflow-y-auto p-0">
-                  <div className="grid gap-4 p-4 md:grid-cols-2">
+                <DialogContent className="flex flex-col overflow-y-auto p-0 sm:max-w-3xl">
+                  <div className="grid w-full gap-4 p-4 md:grid-cols-2">
                     <CloudinaryImage
-                      src={artwork.url}
+                      src={artwork.imagePublicId}
                       alt={artwork.title}
                       width={600}
                       height={450}
@@ -182,12 +102,12 @@ export function GalleryPage() {
                       crop={{
                         type: "scale",
                         source: true,
-                        width: 500,
+                        width: 600,
                       }}
-                      className="h-auto w-full rounded-lg object-cover"
+                      className="w-full rounded-lg object-cover"
                     />
 
-                    <div className="flex flex-col gap-4">
+                    <div className="flex w-full flex-col gap-4">
                       <DialogHeader className="gap-2">
                         <DialogTitle asChild>
                           <h2 className="text-xl font-bold">{artwork.title}</h2>

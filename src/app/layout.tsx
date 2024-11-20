@@ -6,13 +6,13 @@ import "./globals.css";
 // Components
 import { Toaster } from "sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { CldOgImage } from "next-cloudinary";
-
-// Types
-import type { Metadata } from "next";
 import { AbstractedShapes } from "@/components/utils";
 import { AppHeader } from "@/components/appHeader";
 import { AppFooter } from "@/components/appFooter";
+import Head from "next/head";
+
+// Types
+import type { Metadata } from "next";
 
 // Fonts
 const geistSans = localFont({
@@ -55,7 +55,7 @@ export default function RootLayout({
       lang="en"
       className="scroll-smooth font-[family-name:var(--font-geist-sans)]"
     >
-      {/* <Head>
+      <Head>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -74,7 +74,6 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://bangeyhodhy.com" />
@@ -106,13 +105,7 @@ export default function RootLayout({
           content="Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art."
         />
         <meta name="twitter:image" content="/openg.jpg" />
-      </Head> */}
-
-      <CldOgImage
-        alt="BangeYhodhy Abstract Painting"
-        src="openg_thkrzt
-"
-      />
+      </Head>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} h-full min-h-dvh bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 antialiased`}

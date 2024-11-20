@@ -1,4 +1,6 @@
 // Components
+import { apiClient } from "@/apiClient";
+import { GalleryPage } from "@/components/galleryPage";
 import { AppPage } from "@/components/utils";
 
 /**
@@ -7,10 +9,11 @@ import { AppPage } from "@/components/utils";
  * @returns {JSX.Element} The gallery page
  */
 export default async function galleryPage() {
+  const artWorks = await apiClient.artwork.getArtworks();
+
   return (
     <AppPage>
-      page
-      {/* <GalleryPage /> */}
+      <GalleryPage artWorks={artWorks} />
     </AppPage>
   );
 }

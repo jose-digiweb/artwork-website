@@ -6,7 +6,9 @@ import { Header } from "./header";
 import { AssetsList } from "./assets";
 
 // Types
+import type { Artwork } from "@prisma/client";
 type Props = {
+  artWorks: Artwork[];
   className?: string;
 };
 
@@ -17,11 +19,11 @@ type Props = {
  * @param {string} props.className - The component className
  * @returns {React.ReactNode} The AssetsManager component
  */
-export const AssetsManager = ({ className }: Props) => {
+export const AssetsManager = ({ artWorks, className }: Props) => {
   return (
     <div className={cn("flex flex-col", className)}>
       <Header />
-      <AssetsList />
+      <AssetsList artWorks={artWorks} />
     </div>
   );
 };

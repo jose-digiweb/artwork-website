@@ -16,36 +16,15 @@ import { motion } from "framer-motion";
 import { SectionTitle, SectionBgBlur } from "../../utils";
 import { CloudinaryImage } from "../../cloudinary";
 import Link from "next/link";
+import { ArtworkType } from "@/apiClient/artwork";
 
 // Types
 type Props = {
   className?: string;
+  featuredArtworks: ArtworkType[];
 };
 
-const FeaturedImages = [
-  {
-    src: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256590/The_Unseen_Divide_uyvlqq.jpg",
-    title: "Chromatic Dreams",
-    description: "2024 Collection",
-  },
-  {
-    src: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731257065/The_Unseen_Force_zbjipp.jpg",
-    title: "Ethereal Forms",
-    description: "2024 Collection",
-  },
-  {
-    src: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256763/new1_bogmow.jpg",
-    title: "Ethereal Forms",
-    description: "2024 Collection",
-  },
-  {
-    src: "https://res.cloudinary.com/dg0lp0ga7/image/upload/v1731256586/The_Unknown_abi0fn.jpg",
-    title: "Immersive Forms",
-    description: "2024 Collection",
-  },
-];
-
-export const FeaturedSection = ({ className }: Props) => {
+export const FeaturedSection = ({ featuredArtworks, className }: Props) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -61,10 +40,10 @@ export const FeaturedSection = ({ className }: Props) => {
       <SectionBgBlur className="p-4">
         <LightGallery selector="a" speed={500} plugins={[lgThumbnail, lgZoom]}>
           <div className="grid grid-cols-2 gap-2 sm:gap-8 lg:grid-cols-4">
-            {FeaturedImages.map((image, i) => (
+            {featuredArtworks.map((artwork, i) => (
               <Link
                 key={i}
-                href={image.src}
+                href={artwork.imageUrl}
                 className="group relative aspect-[4/5] overflow-hidden rounded-lg shadow-lg"
               >
                 <CloudinaryImage
@@ -77,15 +56,15 @@ export const FeaturedSection = ({ className }: Props) => {
                     width: 400,
                     aspectRatio: "4:5",
                   }}
-                  src={image.src}
-                  alt={`Featured Artwork ${image.title}`}
+                  src={artwork.imagePublicId}
+                  alt={`Featured Artwork ${artwork.title}`}
                   className="object-cover transition-transform duration-300 sm:group-hover:scale-110"
                 />
                 <div className="absolute inset-x-0 bottom-0 flex flex-col bg-gradient-to-t from-black/90 to-transparent p-4 pt-8 opacity-100 transition-opacity duration-300">
                   <p className="text-sm font-semibold text-white sm:text-lg">
-                    {image.title}
+                    {artwork.title}
                   </p>
-                  <p className="text-sm text-gray-400">{image.description}</p>
+                  <p className="text-sm text-gray-400">{artwork.description}</p>
                 </div>
               </Link>
             ))}

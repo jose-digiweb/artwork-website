@@ -1,4 +1,5 @@
 // Components
+import { apiClient } from "@/apiClient";
 import { AssetsManager } from "@/components/adminPage";
 import { AppPage, SectionTitle } from "@/components/utils";
 
@@ -7,7 +8,9 @@ import { AppPage, SectionTitle } from "@/components/utils";
  * @description The admin page of the website
  * @returns {JSX.Element} The Admin page component
  */
-export default function AdminPage() {
+export default async function AdminPage() {
+  const artworks = await apiClient.artwork.getArtworks();
+
   return (
     <AppPage>
       <SectionTitle
@@ -15,7 +18,7 @@ export default function AdminPage() {
         description="Manage your artworks"
       />
 
-      <AssetsManager />
+      <AssetsManager artWorks={artworks} />
     </AppPage>
   );
 }
