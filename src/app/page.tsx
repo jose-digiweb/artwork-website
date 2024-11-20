@@ -12,7 +12,7 @@ export default function HomePage() {
     <AppPage className="gap-8">
       <Home.HeroSection className="mb-8 sm:mb-14" />
 
-      <Home.FeaturedSection />
+      {/* <Home.FeaturedSection /> */}
 
       <Home.AboutSection />
 

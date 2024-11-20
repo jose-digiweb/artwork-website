@@ -1,5 +1,4 @@
 // Components
-import { GalleryPage } from "@/components/galleryPage";
 import { AppPage } from "@/components/utils";
 
 /**
@@ -10,7 +9,8 @@ import { AppPage } from "@/components/utils";
 export default async function galleryPage() {
   return (
     <AppPage>
-      <GalleryPage />
+      page
+      {/* <GalleryPage /> */}
     </AppPage>
   );
 }
