@@ -43,7 +43,7 @@ export const FeaturedSection = ({ featuredArtworks, className }: Props) => {
             {featuredArtworks.map((artwork, i) => (
               <Link
                 key={i}
-                href={artwork.imageUrl}
+                href={artwork.imageSecureUrl}
                 className="group relative aspect-[4/5] overflow-hidden rounded-lg shadow-lg"
               >
                 <CloudinaryImage
@@ -56,7 +56,7 @@ export const FeaturedSection = ({ featuredArtworks, className }: Props) => {
                     width: 400,
                     aspectRatio: "4:5",
                   }}
-                  src={artwork.imagePublicId}
+                  src={artwork.thumbnailUrl}
                   alt={`Featured Artwork ${artwork.title}`}
                   className="object-cover transition-transform duration-300 sm:group-hover:scale-110"
                 />

@@ -110,7 +110,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} h-full min-h-dvh bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 antialiased`}
       >
-        <AppHeader className="sticky top-0 z-50" />
+        <AppHeader
+          className="sticky top-0 z-50"
+          showAdmin={process.env.NODE_ENV === "development"}
+        />
         {children}
         <AppFooter className="" />
 

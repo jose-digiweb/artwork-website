@@ -2,6 +2,7 @@
 import { apiClient } from "@/apiClient";
 import { AssetsManager } from "@/components/adminPage";
 import { AppPage, SectionTitle } from "@/components/utils";
+import { redirect } from "next/navigation";
 
 /**
  * The Admin page
@@ -9,6 +10,8 @@ import { AppPage, SectionTitle } from "@/components/utils";
  * @returns {JSX.Element} The Admin page component
  */
 export default async function AdminPage() {
+  if (process.env.NODE_ENV === "production") redirect("/");
+
   const artworks = await apiClient.artwork.getArtworks();
 
   return (

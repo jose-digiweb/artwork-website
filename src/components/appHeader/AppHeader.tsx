@@ -12,6 +12,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 // Types
 type Props = {
+  showAdmin?: boolean;
   className?: string;
 };
 
@@ -22,7 +23,7 @@ type Props = {
  * @param {string} props.className - The component className
  * @returns {React.ReactNode} The app header component
  */
-export const AppHeader = ({ className }: Props) => {
+export const AppHeader = ({ showAdmin = true, className }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header
@@ -43,7 +44,7 @@ export const AppHeader = ({ className }: Props) => {
           <NavLink href="/gallery">Gallery</NavLink>
           <NavLink href="/about">About Me</NavLink>
           <NavLink href="/#contact-section">Contact</NavLink>
-          <NavLink href="/admin">Admin</NavLink>
+          {showAdmin ? <NavLink href="/admin">Admin</NavLink> : null}
         </div>
 
         <Button
