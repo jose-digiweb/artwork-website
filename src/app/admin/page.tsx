@@ -15,7 +15,7 @@ export default async function AdminPage() {
   const artworks = await apiClient.artwork.getArtworks();
 
   return (
-    <AppPage>
+    <AppPage className="gap-8">
       <SectionTitle
         title="Manage Artworks"
         description="Manage your artworks"

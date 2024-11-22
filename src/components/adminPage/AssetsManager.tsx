@@ -21,7 +21,7 @@ type Props = {
  */
 export const AssetsManager = ({ artWorks, className }: Props) => {
   return (
-    <div className={cn("flex flex-col", className)}>
+    <div className={cn("flex flex-col gap-6", className)}>
       <Header />
       <AssetsList artWorks={artWorks} />
     </div>

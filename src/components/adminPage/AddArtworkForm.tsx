@@ -27,6 +27,8 @@ import {
 } from "@/components/ui/select";
 import { Save } from "lucide-react";
 import { Switch } from "../ui/switch";
+import { Textarea } from "../ui/textarea";
+import { Artwork } from "@prisma/client";
 
 // Schema
 export const addArtworkFormSchema = z.object({
@@ -41,6 +43,7 @@ export const addArtworkFormSchema = z.object({
 // Types
 export type AddArtworkFormValues = z.infer<typeof addArtworkFormSchema>;
 type Props = {
+  artwork?: Artwork;
   className?: string;
   onCancel: () => void;
   onSubmit: (payload: AddArtworkFormValues) => void;
@@ -78,10 +81,15 @@ const initialValues: AddArtworkFormValues = {
  * @param {string} props.className - The component className
  * @returns {React.ReactNode} The AddArtworkForm component
  */
-export function AddArtworkForm({ onSubmit, onCancel, className }: Props) {
+export function AddArtworkForm({
+  artwork,
+  onSubmit,
+  onCancel,
+  className,
+}: Props) {
   const form = useForm<AddArtworkFormValues>({
     mode: "onBlur",
-    defaultValues: initialValues,
+    defaultValues: artwork || initialValues,
     resolver: zodResolver(addArtworkFormSchema),
   });
 
@@ -89,7 +97,7 @@ export function AddArtworkForm({ onSubmit, onCancel, className }: Props) {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className={cn("flex w-full flex-col", className)}
+        className={cn("flex h-full w-full flex-col", className)}
       >
         <FormField
           control={form.control}
@@ -99,21 +107,6 @@ export function AddArtworkForm({ onSubmit, onCancel, className }: Props) {
               <FormLabel>Title</FormLabel>
               <FormControl>
                 <Input placeholder="Add a title" type="text" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="description"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Description</FormLabel>
-              <FormControl>
-                <Input placeholder="Add a description" type="text" {...field} />
               </FormControl>
 
               <FormMessage />
@@ -208,6 +201,21 @@ export function AddArtworkForm({ onSubmit, onCancel, className }: Props) {
                   ))}
                 </SelectContent>
               </Select>
+
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="description"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Description</FormLabel>
+              <FormControl>
+                <Textarea placeholder="Add a description" {...field} />
+              </FormControl>
 
               <FormMessage />
             </FormItem>

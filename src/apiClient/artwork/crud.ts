@@ -42,3 +42,19 @@ export const deleteArtwork = async (id: string) => {
     },
   });
 };
+
+export const editArtwork = async (id: string, data: ArtworkType) => {
+  await prisma.artwork.update({
+    where: {
+      id,
+    },
+    data,
+  });
+};
+
+export const toggleFeaturedArtwork = async (id: string, featured: boolean) => {
+  await prisma.artwork.update({
+    where: { id },
+    data: { featured },
+  });
+};

@@ -1,1 +1,5 @@
-export { addArtworkAction, deleteArtworkAction } from "./addArtworkAction";
+export {
+  addArtworkAction,
+  deleteArtworkAction,
+  deleteCloudinaryAssetAction,
+} from "./addArtworkAction";

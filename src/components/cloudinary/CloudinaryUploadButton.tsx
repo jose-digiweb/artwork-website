@@ -47,7 +47,7 @@ export const CloudinaryUploadButton = ({ onSuccess }: Props) => {
           <Button onClick={() => open()} className="w-max gap-2">
             <PlusCircle />
 
-            <span>Upload Image</span>
+            <span>Add new artwork</span>
           </Button>
         );
       }}

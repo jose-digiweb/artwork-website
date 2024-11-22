@@ -133,23 +133,7 @@ export function GalleryPage({ artWorks, className }: Props) {
                             </DialogDescription>
                           </DialogHeader>
 
-                          <p className="mb-4">
-                            This captivating acrylic abstract piece by Bange
-                            Yhodhy explores the depths of emotion through a
-                            harmonious blend of color, form, and texture. The
-                            artwork invites viewers to immerse themselves in a
-                            world of non-representational beauty, evoking
-                            personal interpretations and feelings.
-                          </p>
-                          <p className="mb-4">
-                            Yhodhy&lsquo;s masterful use of acrylic paint
-                            creates layers of visual intrigue, with each
-                            brushstroke and color choice carefully considered to
-                            produce a balanced yet dynamic composition. The
-                            piece reflects the artist&lsquo;s commitment to
-                            pushing the boundaries of abstract expression
-                            through the versatile medium of acrylics.
-                          </p>
+                          <p className="mb-4">{artwork.description}</p>
                         </div>
                       </div>
                       <DialogFooter className="gap-2 border-t p-4">

@@ -3,7 +3,7 @@
 // Dependencies
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { addArtworkAction, deleteArtworkAction } from "@/serverActions";
+import { addArtworkAction, deleteCloudinaryAssetAction } from "@/serverActions";
 
 // Components
 import {
@@ -42,7 +42,7 @@ export const Header = ({ className }: Props) => {
     const formData = new FormData();
     formData.append("id", imageData.public_id);
 
-    deleteArtworkAction(null, formData);
+    deleteCloudinaryAssetAction(null, formData);
     setImageData(null);
   };
 
@@ -71,8 +71,8 @@ export const Header = ({ className }: Props) => {
 
       {imageData !== null ? (
         <Dialog open={imageData !== null}>
-          <DialogContent>
-            <div className="flex h-full flex-col gap-8 overflow-y-auto">
+          <DialogContent showCloseButton={false}>
+            <div className="flex h-full max-h-dvh flex-col gap-8 overflow-y-auto">
               <DialogHeader>
                 <DialogTitle>Artwork Information</DialogTitle>
 
@@ -81,11 +81,7 @@ export const Header = ({ className }: Props) => {
                 </DialogDescription>
               </DialogHeader>
 
-              <AddArtworkForm
-                onSubmit={handleSubmit}
-                onCancel={handleCancel}
-                className="h-full w-full"
-              />
+              <AddArtworkForm onSubmit={handleSubmit} onCancel={handleCancel} />
             </div>
           </DialogContent>
         </Dialog>
