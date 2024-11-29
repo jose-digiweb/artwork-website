@@ -50,13 +50,13 @@ export const metadata: Metadata = {
       "Discover stunning abstract paintings, by BangeYhodhy. Each piece is unique, and each one is a work of art.",
     images: [
       {
-        url: "/opengraph-image.jpg",
+        url: "/opengraph.jpg",
         width: 1200,
         height: 630,
         alt: "Bange Yhodhy's Artwork",
         host: "https://bangeyhodhy.com",
         hostname: "bangeyhodhy.com",
-        secureUrl: "https://bangeyhodhy.com/opengraph-image.jpg",
+        secureUrl: "https://bangeyhodhy.com/opengraph.jpg",
       },
     ],
   },
