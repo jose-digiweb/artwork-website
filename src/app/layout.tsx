@@ -35,6 +35,7 @@ const kalam = Kaushan_Script({
 // Metadata
 export const metadata: Metadata = {
   title: "BangeYhodhy Abstract Painting",
+  category: "Art",
   description:
     "Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.",
   metadataBase: new URL("https://bangeyhodhy.com"),
@@ -59,6 +60,23 @@ export const metadata: Metadata = {
         secureUrl: "https://bangeyhodhy.com/opengraph-image.jpg",
       },
     ],
+  },
+  icons: {
+    icon: "/favicon-16x16.png",
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon.png",
+    },
+  },
+  verification: {
+    google: "google",
+    yandex: "yandex",
+    yahoo: "yahoo",
+    other: {
+      me: ["contact@bangeyhodhy.com", "mailto:contact@bangeyhodhy.com"],
+    },
   },
 };
 
