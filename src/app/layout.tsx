@@ -47,8 +47,18 @@ export const metadata: Metadata = {
     title: "BangeYhodhy Abstract Painting",
     siteName: "Bange Yhodhy",
     description:
-      "Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.",
-    images: "/opengraph-image.jpg",
+      "Discover stunning abstract paintings, by BangeYhodhy. Each piece is unique, and each one is a work of art.",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bange Yhodhy's Artwork",
+        host: "https://bangeyhodhy.com",
+        hostname: "bangeyhodhy.com",
+        secureUrl: "https://bangeyhodhy.com/opengraph-image.jpg",
+      },
+    ],
   },
 };
 
