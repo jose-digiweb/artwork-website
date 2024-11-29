@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   title: "BangeYhodhy Abstract Painting",
   category: "Art",
   description:
-    "Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.",
+    "Discover stunning abstract paintings, by BangeYhodhy. Each piece is unique, and each one is a work of art, by this very talented artist from Guinea Bissau, based in Rotterdam, The Netherlands.",
   metadataBase: new URL("https://bangeyhodhy.com"),
   alternates: {
     canonical: "/",
