@@ -52,6 +52,16 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        float: {
+          "0%": { transform: "translate(0, 0) rotate(0deg)" },
+          "50%": { transform: "translate(10px, 10px) rotate(5deg)" },
+          "100%": { transform: "translate(0, 0) rotate(0deg)" },
+        },
+      },
+      animation: {
+        float: "float 15s infinite ease-in-out",
+      },
     },
   },
   plugins: [tailwindAnimate, tailwindScrollbar, tailwindTypography],

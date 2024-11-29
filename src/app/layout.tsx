@@ -74,37 +74,6 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://bangeyhodhy.com" />
-        <meta property="og:title" content="BangeYhodhy Abstract Painting" />
-        <meta property="og:site_name" content="BangeYhodhy Abstract Painting" />
-        <meta
-          property="og:description"
-          content="Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art."
-        />
-        <meta property="og:image" content="/openg.jpg" />
-        <meta property="og:image:width" content="300" />
-        <meta property="og:image:height" content="300" />
-        <meta property="og:image:alt" content="BangeYhodhy Abstract Painting" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta
-          property="og:image:secure_url"
-          content="https://bangeyhodhy.com/openg.jpg"
-        />
-        <meta
-          property="og:image:url"
-          content="https://bangeyhodhy.com/openg.jpg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="bangeyhodhy.com" />
-        <meta property="twitter:url" content="https://bangeyhodhy.com" />
-        <meta name="twitter:title" content="BangeYhodhy Abstract Painting" />
-        <meta
-          name="twitter:description"
-          content="Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art."
-        />
-        <meta name="twitter:image" content="/openg.jpg" />
       </Head>
 
       <body
