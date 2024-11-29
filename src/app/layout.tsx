@@ -9,7 +9,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AbstractedShapes } from "@/components/utils";
 import { AppHeader } from "@/components/appHeader";
 import { AppFooter } from "@/components/appFooter";
-import Head from "next/head";
 
 // Types
 import type { Metadata } from "next";
@@ -96,27 +95,6 @@ export default function RootLayout({
       lang="en"
       className="scroll-smooth font-[family-name:var(--font-geist-sans)]"
     >
-      <Head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-      </Head>
-
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} h-full min-h-dvh bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 antialiased`}
       >
