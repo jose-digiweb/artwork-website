@@ -40,11 +40,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://bangeyhodhy.com"),
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": "/en-US",
-    },
   },
   openGraph: {
+    type: "website",
+    url: "https://bangeyhodhy.com",
+    title: "BangeYhodhy Abstract Painting",
+    siteName: "Bange Yhodhy",
+    description:
+      "Discover stunning abstract paintings, by BangeYhodhy, a talented artist from Guinea Bissau, based in Rotterdam, The Netherlands. Each piece is unique, and each one is a work of art.",
     images: "/opengraph-image.jpg",
   },
 };
