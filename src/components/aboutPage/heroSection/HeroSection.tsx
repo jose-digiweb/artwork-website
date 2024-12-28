@@ -33,11 +33,14 @@ export const HeroSection = ({ className }: Props) => {
         <p className="mb-4 text-lg leading-relaxed text-gray-600">
           Abstract artist, color enthusiast, and emotion translator.
         </p>
-        <p className="mb-8 leading-relaxed text-gray-500">
-          Welcome to my world of vibrant abstractions and emotive art. I&apos;m
-          Bange Yhodhy, an artist dedicated to exploring the depths of human
-          emotion through color, form, and texture. My journey in the world of
-          abstract art has been one of constant discovery and growth.
+        <p className="mb-8 text-balance leading-relaxed text-gray-500">
+          My art is a tactile journey, where the connection between my hands and
+          the canvas becomes a form of storytelling.{" "}
+          <strong>Painting with my hands </strong>
+          allows me to immerse myself fully in the creative process, blending
+          intuition with raw emotion. This direct interaction brings a sense of
+          intimacy and authenticity to my work, as every gesture carries the
+          rhythm of my heritage and the energy of my experiences.
         </p>
 
         <Link href="/gallery">

@@ -22,19 +22,19 @@ const cards = [
     title: "The Artist",
     icon: Paintbrush,
     content:
-      "Bange Yhodhy is a contemporary abstract artist known for pushing the boundaries of form and color. With a career spanning over two decades, Yhodhy's work has been featured in galleries across Europe and North America.",
+      "I’m Bange Yhodhy, an artist deeply inspired by the colors and textures of my Fulani heritage from Guinea-Bissau, interwoven with the rich influences of Cape Verde, São Paulo, and Rotterdam.",
   },
   {
     title: "The Inspiration",
     icon: Palette,
     content:
-      "Inspired by urban landscapes, natural phenomena, and human emotions, Yhodhy creates pieces that resonate on a subconscious level with viewers. Each artwork is an exploration of the unseen connections that bind us all.",
+      "Inspired by the vibrant textures of my Fulani roots, the colors of Guinea-Bissau, and the diverse cultures I’ve encountered in Cape Verde, São Paulo, and Rotterdam, I aim to evoke the complexities of identity, resilience, and transformation. The movement of my hands across the canvas mirrors the dynamic flow of life, creating art that invites viewers to feel, reflect, and connect.",
   },
   {
     title: "The Process",
     icon: Zap,
     content:
-      "Yhodhy's creative process is a dance of intuition and technique. Starting with bold, gestural strokes, Yhodhy builds layers of color and texture, often incorporating unconventional materials to create depth and intrigue in each piece.",
+      "My art is a tactile journey, where the connection between my hands and the canvas becomes a form of storytelling. Painting with my hands allows me to immerse myself fully in the creative process, blending intuition with raw emotion. This direct interaction brings a sense of intimacy and authenticity to my work, as every gesture carries the rhythm of my heritage and the energy of my experiences.",
   },
 ];
 
