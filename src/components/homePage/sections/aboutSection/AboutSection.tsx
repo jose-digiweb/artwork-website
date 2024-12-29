@@ -7,7 +7,6 @@ import { useState } from "react";
 // Components
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight, Paintbrush, Palette, Zap } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { CloudinaryImage } from "../../../cloudinary";
 import { SectionTitle, SectionBgBlur } from "../../../utils";
 import Link from "next/link";
@@ -95,30 +94,24 @@ export function AboutSection({ className }: Props) {
                 </CardHeader>
 
                 <div className="w-full pl-10">
-                  <AnimatePresence mode="wait">
-                    {activeCard === index && (
-                      <motion.p
-                        key={index}
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden text-pretty text-sm md:text-base"
-                      >
-                        {card.content}
+                  {activeCard === index && (
+                    <p
+                      key={index}
+                      className="overflow-hidden text-pretty text-sm md:text-base"
+                    >
+                      {card.content}
 
-                        <Link
-                          href="/about"
-                          className="group mt-2 flex w-min items-center text-sm text-primary hover:underline"
-                        >
-                          <span className="truncate font-semibold">
-                            Read More
-                          </span>
-                          <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-                        </Link>
-                      </motion.p>
-                    )}
-                  </AnimatePresence>
+                      <Link
+                        href="/about"
+                        className="group mt-2 flex w-min items-center text-sm text-primary hover:underline"
+                      >
+                        <span className="truncate font-semibold">
+                          Read More
+                        </span>
+                        <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </p>
+                  )}
                 </div>
               </CardContent>
             </Card>

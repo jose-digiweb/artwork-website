@@ -1,10 +1,8 @@
 "use client";
 
 // Dependencies
-import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { wait } from "@/lib/utils";
 import * as z from "zod";
 
 // Components
@@ -19,17 +17,20 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { sendContactEmailAction } from "@/app/actions";
+import { useActionState, useEffect } from "react";
+import { toast } from "sonner";
 
 // Schema
-const formSchema = z.object({
+export const contactFormSchema = z.object({
   name: z.string({ required_error: "Name is required" }),
   email: z.string({ required_error: "Email is required" }).email(),
   subject: z.string({ required_error: "Subject is required" }),
   message: z.string({ required_error: "Message is required" }),
 });
-type FormValues = z.infer<typeof formSchema>;
+export type ContactFormValues = z.infer<typeof contactFormSchema>;
 
-const FormValues: FormValues = {
+const formValues: ContactFormValues = {
   name: "",
   email: "",
   subject: "",
@@ -39,35 +40,34 @@ const FormValues: FormValues = {
 /**
  * Contact Form
  * @description Contact form for the website
- * @returns {JSX.Element} Contact form component
+ * @returns Contact form component
  */
 export function ContactForm() {
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<ContactFormValues>({
     mode: "onBlur",
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: formValues,
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      await wait();
-      console.log(values);
+  const [state, action, isPending] = useActionState(
+    sendContactEmailAction,
+    null,
+  );
 
-      toast.success(
-        "Thank you for your message. We will get back to you soon.",
-      );
-      form.reset(FormValues);
-    } catch (error) {
-      console.error("Form submission error", error);
-      toast.error("Failed to submit the form. Please try again.");
+  useEffect(() => {
+    if (!state) return;
+    if (state.success) {
+      form.reset(formValues);
+      toast.success(state.message);
     }
-  }
+    if (!state.success) {
+      toast.error(state.message);
+    }
+  }, [form, state]);
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-2"
-      >
+      <form action={action} className="flex flex-col gap-2">
         <FormField
           name="name"
           control={form.control}
@@ -75,7 +75,12 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Your name</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" type="text" {...field} />
+                <Input
+                  type="text"
+                  placeholder="Your name"
+                  defaultValue={state?.inputs?.name}
+                  {...field}
+                />
               </FormControl>
 
               <FormMessage />
@@ -90,7 +95,12 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Your email</FormLabel>
               <FormControl>
-                <Input placeholder="Your email" type="email" {...field} />
+                <Input
+                  type="email"
+                  placeholder="Your email"
+                  defaultValue={state?.inputs?.email}
+                  {...field}
+                />
               </FormControl>
 
               <FormMessage />
@@ -105,7 +115,12 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Subject</FormLabel>
               <FormControl>
-                <Input placeholder="Subject" type="text" {...field} />
+                <Input
+                  type="text"
+                  placeholder="Subject"
+                  defaultValue={state?.inputs?.subject}
+                  {...field}
+                />
               </FormControl>
 
               <FormMessage />
@@ -120,7 +135,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Your message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Your message" {...field} />
+                <Textarea
+                  placeholder="Your message"
+                  defaultValue={state?.inputs?.message}
+                  {...field}
+                />
               </FormControl>
 
               <FormMessage />
@@ -128,9 +147,11 @@ export function ContactForm() {
           )}
         />
         <Button
-          isLoading={form.formState.isSubmitting || form.formState.isLoading}
-          disabled={!form.formState.isValid || form.formState.isValidating}
           type="submit"
+          isLoading={
+            form.formState.isSubmitting || form.formState.isLoading || isPending
+          }
+          disabled={!form.formState.isValid || form.formState.isValidating}
         >
           Submit
         </Button>
