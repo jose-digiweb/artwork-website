@@ -20,7 +20,7 @@ export const AppPage = ({ className, children }: Props) => {
   return (
     <section
       className={cn(
-        "h-page-min mx-auto flex h-full w-full max-w-screen-xl flex-col p-4 py-8",
+        "h-page-min mx-auto flex w-full max-w-screen-xl flex-col p-4 py-8",
         className,
       )}
     >

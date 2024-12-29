@@ -1,22 +1,21 @@
-"use client";
-
-// import styles
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
-
 // Dependencies
 import { cn } from "@/lib/utils";
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import lgZoom from "lightgallery/plugins/zoom";
 
 // Components
-import LightGallery from "lightgallery/react";
-import { motion } from "framer-motion";
 import { SectionTitle, SectionBgBlur } from "../../utils";
 import { CloudinaryImage } from "../../cloudinary";
-import Link from "next/link";
 import { ArtworkType } from "@/apiClient/artwork";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTrigger,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 // Types
 type Props = {
@@ -26,51 +25,98 @@ type Props = {
 
 export const FeaturedSection = ({ featuredArtworks, className }: Props) => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.4 }}
-      className={cn("flex w-full flex-col", className)}
-    >
+    <section className={cn("flex w-full flex-col", className)}>
       <SectionTitle
         title="Featured Works"
         description="Bange Yhodhy's latest creations."
       />
 
-      <SectionBgBlur className="p-4">
-        <LightGallery selector="a" speed={500} plugins={[lgThumbnail, lgZoom]}>
-          <div className="grid grid-cols-2 gap-2 sm:gap-8 lg:grid-cols-4">
-            {featuredArtworks.map((artwork, i) => (
-              <Link
-                key={i}
-                href={artwork.imageSecureUrl}
-                className="group relative aspect-[4/5] overflow-hidden rounded-lg shadow-lg"
-              >
-                <CloudinaryImage
-                  fill
-                  quality="auto"
-                  format="auto"
-                  crop={{
-                    type: "scale",
-                    source: true,
-                    width: 400,
-                    aspectRatio: "4:5",
-                  }}
-                  src={artwork.thumbnailUrl}
-                  alt={`Featured Artwork ${artwork.title}`}
-                  className="object-cover transition-transform duration-300 sm:group-hover:scale-110"
-                />
-                <div className="absolute inset-x-0 bottom-0 flex flex-col bg-gradient-to-t from-black/90 to-transparent p-4 pt-8 opacity-100 transition-opacity duration-300">
-                  <p className="text-sm font-semibold text-white sm:text-lg">
-                    {artwork.title}
-                  </p>
-                  <p className="text-sm text-gray-400">{artwork.description}</p>
+      <SectionBgBlur className="p-2 sm:p-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4 lg:grid-cols-4">
+          {featuredArtworks.map((artwork, i) => (
+            <Dialog key={i}>
+              <DialogTrigger asChild>
+                <Card className="cursor-pointer transition-shadow hover:shadow-lg">
+                  <CardContent className="relative z-10 aspect-[4/5] overflow-hidden rounded-md p-0">
+                    <CloudinaryImage
+                      src={artwork.imagePublicId}
+                      alt={artwork.title}
+                      width={400}
+                      height={300}
+                      quality="auto"
+                      format="auto"
+                      crop={{
+                        type: "scale",
+                        source: true,
+                        width: 400,
+                      }}
+                      className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                    />
+
+                    <div className="absolute bottom-0 left-0 hidden w-full bg-gradient-to-t from-black/80 to-transparent p-4 pt-6 text-white sm:block">
+                      <h2 className="mb-2 text-xl font-semibold">
+                        {artwork.title}
+                      </h2>
+                      <p className="text-sm">
+                        {artwork.year} - Acrylic on Canvas
+                      </p>
+                      <p className="text-sm">{artwork.dimensions}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+
+              <DialogContent className="flex flex-col overflow-y-auto p-0 sm:max-w-3xl">
+                <div className="grid w-full gap-4 p-4 md:grid-cols-2">
+                  <CloudinaryImage
+                    src={artwork.imagePublicId}
+                    alt={artwork.title}
+                    width={600}
+                    height={450}
+                    quality="auto"
+                    format="auto"
+                    crop={{
+                      type: "scale",
+                      source: true,
+                      width: 600,
+                    }}
+                    className="w-full rounded-lg object-cover"
+                  />
+
+                  <div className="flex w-full flex-col gap-4">
+                    <DialogHeader className="gap-2">
+                      <DialogTitle asChild>
+                        <h2 className="text-xl font-bold">{artwork.title}</h2>
+                      </DialogTitle>
+
+                      <DialogDescription asChild>
+                        <div className="flex flex-col gap-1">
+                          <p className="text-gray-600">
+                            {artwork.year} - Acrylic on Canvas
+                          </p>
+                          <p className="text-gray-600">
+                            Dimensions: {artwork.dimensions}
+                          </p>
+                        </div>
+                      </DialogDescription>
+                    </DialogHeader>
+
+                    <p className="mb-4">{artwork.description}</p>
+                  </div>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </LightGallery>
+                <DialogFooter className="gap-2 border-t p-4">
+                  <Button className="order-1 mb-2 w-full">
+                    Inquire About This Piece
+                  </Button>
+                  <Button variant="outline" className="w-full">
+                    Add to Favorites
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          ))}
+        </div>
       </SectionBgBlur>
-    </motion.section>
+    </section>
   );
 };

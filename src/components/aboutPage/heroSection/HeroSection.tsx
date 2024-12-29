@@ -1,7 +1,4 @@
-"use client";
-
 // Components
-import { motion } from "framer-motion";
 import { TextGradientClip } from "../../utils";
 import { Button } from "../../ui/button";
 import { GalleryVertical } from "lucide-react";
@@ -16,10 +13,7 @@ type Props = {
 
 export const HeroSection = ({ className }: Props) => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+    <section
       className={cn(
         "flex w-full flex-col items-center md:flex-row md:justify-start md:gap-24",
         className,
@@ -65,6 +59,6 @@ export const HeroSection = ({ className }: Props) => {
           className="rounded-full object-cover"
         />
       </div>
-    </motion.section>
+    </section>
   );
 };

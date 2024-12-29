@@ -13,6 +13,7 @@ export const CloudinaryImage = (props: CldImageProps) => {
   return (
     <CldImage
       {...props}
+      unoptimized
       draggable={false}
       className={`select-none ${props.className}`}
     />

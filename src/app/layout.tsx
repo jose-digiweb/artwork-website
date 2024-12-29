@@ -32,52 +32,54 @@ const kalam = Kaushan_Script({
 });
 
 // Metadata
-export const metadata: Metadata = {
-  title: "BangeYhodhy Abstract Painting",
-  category: "Art",
-  description:
-    "Discover stunning abstract paintings, by BangeYhodhy. Each piece is unique, and each one is a work of art, by this very talented artist from Guinea Bissau, based in Rotterdam, The Netherlands.",
-  metadataBase: new URL("https://bangeyhodhy.com"),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    type: "website",
-    url: "https://bangeyhodhy.com",
+export async function generateMetadata(): Promise<Metadata> {
+  return {
     title: "BangeYhodhy Abstract Painting",
-    siteName: "Bange Yhodhy",
+    category: "Art",
     description:
-      "Discover stunning abstract paintings, by BangeYhodhy. Each piece is unique, and each one is a work of art.",
-    images: [
-      {
-        url: "/opengraph.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Bange Yhodhy's Artwork",
-        host: "https://bangeyhodhy.com",
-        hostname: "bangeyhodhy.com",
-        secureUrl: "https://bangeyhodhy.com/opengraph.jpg",
+      "Discover stunning abstract paintings, by BangeYhodhy. Each piece is unique, and each one is a work of art, by this very talented artist from Guinea Bissau, based in Rotterdam, The Netherlands.",
+    metadataBase: new URL("https://bangeyhodhy.com"),
+    alternates: {
+      canonical: "/",
+    },
+    openGraph: {
+      type: "website",
+      url: "https://bangeyhodhy.com",
+      title: "BangeYhodhy Abstract Painting",
+      siteName: "Bange Yhodhy",
+      description:
+        "Discover stunning abstract paintings, by BangeYhodhy. Each piece is unique, and each one is a work of art.",
+      images: [
+        {
+          url: "/opengraph.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Bange Yhodhy's Artwork",
+          host: "https://bangeyhodhy.com",
+          hostname: "bangeyhodhy.com",
+          secureUrl: "https://bangeyhodhy.com/opengraph.jpg",
+        },
+      ],
+    },
+    icons: {
+      icon: "/favicon-16x16.png",
+      shortcut: "/favicon-32x32.png",
+      apple: "/apple-touch-icon.png",
+      other: {
+        rel: "apple-touch-icon-precomposed",
+        url: "/apple-touch-icon.png",
       },
-    ],
-  },
-  icons: {
-    icon: "/favicon-16x16.png",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/apple-touch-icon.png",
     },
-  },
-  verification: {
-    google: "google",
-    yandex: "yandex",
-    yahoo: "yahoo",
-    other: {
-      me: ["contact@bangeyhodhy.com", "mailto:contact@bangeyhodhy.com"],
+    verification: {
+      google: "google",
+      yandex: "yandex",
+      yahoo: "yahoo",
+      other: {
+        me: ["contact@bangeyhodhy.com", "mailto:contact@bangeyhodhy.com"],
+      },
     },
-  },
-};
+  };
+}
 
 /**
  * The RootLayout component
