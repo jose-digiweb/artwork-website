@@ -2,6 +2,7 @@
 
 import { resend, ContactEmailTemplate } from "@bangeyhodhy/email";
 import { z } from "zod";
+import { env } from "@bangeyhodhy/env";
 
 const contactFormSchema = z.object({
   name: z.string({ required_error: "Name is required" }),
@@ -46,8 +47,8 @@ export async function sendContactEmailAction(
     const data = validatedData.data;
 
     const { error } = await resend.emails.send({
-      from: `Bange Yhodhy Website <${process.env.RESEND_FROM_EMAIL}>`,
-      to: ["josefurtado.digital@gmail.com"],
+      from: `Bange Yhodhy Website <${env.RESEND_FROM_EMAIL}>`,
+      to: [env.RESEND_FROM_EMAIL],
       subject: data.subject,
       react: ContactEmailTemplate({
         name: data.name,
