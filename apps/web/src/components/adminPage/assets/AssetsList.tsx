@@ -22,7 +22,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 
 // Types
-import type { Artwork } from "@prisma/client";
+import type { Artwork } from "@bangeyhodhy/database";
 type Props = {
   artWorks: Artwork[];
   className?: string;

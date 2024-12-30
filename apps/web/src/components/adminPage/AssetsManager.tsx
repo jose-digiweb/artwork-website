@@ -6,7 +6,7 @@ import { Header } from "./header";
 import { AssetsList } from "./assets";
 
 // Types
-import type { Artwork } from "@prisma/client";
+import type { Artwork } from "@bangeyhodhy/database";
 type Props = {
   artWorks: Artwork[];
   className?: string;

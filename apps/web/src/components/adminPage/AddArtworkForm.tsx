@@ -28,7 +28,7 @@ import {
 import { Save } from "lucide-react";
 import { Switch } from "../ui/switch";
 import { Textarea } from "../ui/textarea";
-import { Artwork } from "@prisma/client";
+import type { Artwork } from "@bangeyhodhy/database";
 
 // Schema
 export const addArtworkFormSchema = z.object({
