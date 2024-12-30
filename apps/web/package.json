@@ -28,6 +28,7 @@
     "@radix-ui/react-tooltip": "^1.1.6",
     "@vercel/speed-insights": "^1.1.0",
     "add": "^2.0.6",
+    "@bangeyhodhy/env": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "cloudinary": "^2.5.1",
     "clsx": "^2.1.1",
