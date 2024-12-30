@@ -83,7 +83,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 /**
  * The RootLayout component
- * @description The root layout component
+ * @description The root layout component for the website
  * @param {React.ReactNode} children - The children components
  * @returns {React.ReactNode} The root layout component
  */
