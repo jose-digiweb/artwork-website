@@ -1,11 +1,10 @@
 // Dependencies
-import { prisma } from "@/lib/prisma";
-import { Artwork } from "@prisma/client";
+import { database, type Artwork } from "@bangeyhodhy/database";
 
 export type ArtworkType = Omit<Artwork, "id" | "createdAt" | "updatedAt">;
 
 export const getArtworks = async () => {
-  const artworks = await prisma.artwork.findMany({
+  const artworks = await database.artwork.findMany({
     orderBy: {
       createdAt: "desc",
     },
@@ -16,7 +15,7 @@ export const getArtworks = async () => {
 };
 
 export const getFeaturedArtworks = async () => {
-  const artworks = await prisma.artwork.findMany({
+  const artworks = await database.artwork.findMany({
     where: {
       featured: true,
     },
@@ -30,13 +29,13 @@ export const getFeaturedArtworks = async () => {
 };
 
 export const addArtwork = async (data: ArtworkType) => {
-  const artwork = await prisma.artwork.create({ data });
+  const artwork = await database.artwork.create({ data });
 
   return artwork;
 };
 
 export const deleteArtwork = async (id: string) => {
-  await prisma.artwork.delete({
+  await database.artwork.delete({
     where: {
       id,
     },
@@ -44,7 +43,7 @@ export const deleteArtwork = async (id: string) => {
 };
 
 export const editArtwork = async (id: string, data: ArtworkType) => {
-  await prisma.artwork.update({
+  await database.artwork.update({
     where: {
       id,
     },
@@ -53,7 +52,7 @@ export const editArtwork = async (id: string, data: ArtworkType) => {
 };
 
 export const toggleFeaturedArtwork = async (id: string, featured: boolean) => {
-  await prisma.artwork.update({
+  await database.artwork.update({
     where: { id },
     data: { featured },
   });

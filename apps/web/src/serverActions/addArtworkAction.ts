@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { apiClient } from "@/apiClient";
-import { Artwork } from "@prisma/client";
+import type { Artwork } from "@bangeyhodhy/database";
 
 export async function addArtworkAction(state: unknown, formData: FormData) {
   const data = Object.fromEntries(formData.entries()) as unknown as Artwork;

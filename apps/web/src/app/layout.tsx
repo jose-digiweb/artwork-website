@@ -75,7 +75,7 @@ export async function generateMetadata(): Promise<Metadata> {
       yandex: "yandex",
       yahoo: "yahoo",
       other: {
-        me: ["contact@bangeyhodhy.com", "mailto:contact@bangeyhodhy.com"],
+        me: ["contact@bangeyhodhy/.com", "mailto:contact@bangeyhodhy/.com"],
       },
     },
   };
