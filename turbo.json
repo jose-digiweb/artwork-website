@@ -15,5 +15,5 @@
       "persistent": true
     }
   },
-  "globalEnv": ["DATABASE_URL"]
+  "globalEnv": ["DATABASE_URL", "RESEND_API_KEY"]
 }

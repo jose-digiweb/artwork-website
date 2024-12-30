@@ -1,8 +1,6 @@
 "use server";
 
-import { ContactEmail } from "@/components/email/templates/Contact";
-
-import { Resend } from "resend";
+import { resend, ContactEmailTemplate } from "@bangeyhodhy/email";
 import { z } from "zod";
 
 const contactFormSchema = z.object({
@@ -13,8 +11,6 @@ const contactFormSchema = z.object({
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 type ActionResponse = {
   success: boolean;
@@ -51,9 +47,13 @@ export async function sendContactEmailAction(
 
     const { error } = await resend.emails.send({
       from: `Bange Yhodhy Website <${process.env.RESEND_FROM_EMAIL}>`,
-      to: [process.env.RESEND_FROM_EMAIL!],
+      to: ["josefurtado.digital@gmail.com"],
       subject: data.subject,
-      react: ContactEmail({ ...data }),
+      react: ContactEmailTemplate({
+        name: data.name,
+        email: data.email,
+        message: data.message,
+      }),
     });
 
     if (error) {

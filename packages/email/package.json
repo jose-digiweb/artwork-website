@@ -1,0 +1,19 @@
+{
+  "name": "@bangeyhodhy/email",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@react-email/components": "0.0.28",
+    "@bangeyhodhy/env": "workspace:*",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "resend": "^4.0.1"
+  },
+  "devDependencies": {
+    "@bangeyhodhy/typescript-config": "workspace:*",
+    "@types/node": "^20.17.10",
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2",
+    "typescript": "^5.7.2"
+  }
+}
