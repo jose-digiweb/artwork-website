@@ -18,6 +18,7 @@ import { CloudinaryImage } from "../cloudinary";
 
 // Types
 import type { Artwork } from "@bangeyhodhy/database";
+import Link from "next/link";
 type Props = {
   artWorks: Artwork[];
   className?: string;
@@ -117,12 +118,15 @@ export function GalleryPage({ artWorks, className }: Props) {
                     </div>
                   </div>
                   <DialogFooter className="gap-2 border-t p-4">
-                    <Button className="order-1 mb-2 w-full">
-                      Inquire About This Piece
-                    </Button>
-                    <Button variant="outline" className="w-full">
-                      Add to Favorites
-                    </Button>
+                    <Link
+                      href={`https://wa.me/31687523821?text=Hello, I'm interested in the following piece: Title: ${artwork.title}, Image: ${artwork.imageUrl}`}
+                      target="_blank"
+                      className="flex items-center"
+                    >
+                      <Button className="order-1 mb-2 w-full">
+                        Inquire About This Piece
+                      </Button>
+                    </Link>
                   </DialogFooter>
                 </DialogContent>
               </Dialog>

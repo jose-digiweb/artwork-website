@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 // Types
 type Props = {
@@ -106,12 +107,15 @@ export const FeaturedSection = ({ featuredArtworks, className }: Props) => {
                   </div>
                 </div>
                 <DialogFooter className="gap-2 border-t p-4">
-                  <Button className="order-1 mb-2 w-full">
-                    Inquire About This Piece
-                  </Button>
-                  <Button variant="outline" className="w-full">
-                    Add to Favorites
-                  </Button>
+                  <Link
+                    href={`https://wa.me/31687523821?text=Hello, I'm interested in the following piece: Title: ${artwork.title}, Image: ${artwork.imageUrl}`}
+                    target="_blank"
+                    className="flex items-center"
+                  >
+                    <Button className="order-1 mb-2 w-full">
+                      Inquire About This Piece
+                    </Button>
+                  </Link>
                 </DialogFooter>
               </DialogContent>
             </Dialog>
