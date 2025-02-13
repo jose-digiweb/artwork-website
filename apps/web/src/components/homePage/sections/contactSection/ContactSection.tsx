@@ -1,10 +1,18 @@
 // Dependencies
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  Phone,
+  MessageCircle,
+} from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader } from "../../../ui/card";
 import { SectionTitle, SectionBgBlur } from "../../../utils";
 import { ContactForm } from "./ContactForm";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 // Types
 type Props = {
@@ -56,10 +64,22 @@ export const ContactSection = ({ className }: Props) => {
                   <Phone className="mr-2 h-5 w-5 text-purple-600" />
                   <span>+31 687 523 821</span>
                 </div>
+
                 <div className="flex items-center">
                   <MapPin className="mr-2 h-5 w-5 text-purple-600" />
                   <span>Rotterdam, The Netherlands</span>
                 </div>
+
+                <Link
+                  href="https://wa.me/31687523821"
+                  target="_blank"
+                  className="flex items-center"
+                >
+                  <Button className="flex-1 gap-2 bg-green-600 hover:bg-green-700">
+                    <MessageCircle className="size-6" />
+                    <span>WhatsApp</span>
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>

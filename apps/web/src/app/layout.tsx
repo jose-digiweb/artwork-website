@@ -1,10 +1,11 @@
 // Dependencies
+import "@bangeyhodhy/design-system/styles/globals.css";
+import { DesignSystemProvider } from "@bangeyhodhy/design-system";
+import { fonts } from "@bangeyhodhy/design-system/lib/fonts";
 import { Kaushan_Script } from "next/font/google";
-import localFont from "next/font/local";
-import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 // Components
-import { Toaster } from "sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AbstractedShapes } from "@/components/utils";
 import { AppHeader } from "@/components/appHeader";
@@ -14,16 +15,6 @@ import { AppFooter } from "@/components/appFooter";
 import type { Metadata } from "next";
 
 // Fonts
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 const kalam = Kaushan_Script({
   subsets: ["latin"],
   weight: ["400"],
@@ -93,23 +84,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className="scroll-smooth font-[family-name:var(--font-geist-sans)]"
-    >
+    <html lang="en" className={fonts} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} h-full min-h-dvh bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100 antialiased`}
+        className={`${kalam.variable} h-full min-h-dvh bg-gradient-to-br from-rose-100 via-fuchsia-100 to-indigo-100`}
       >
-        <AppHeader
-          className="sticky top-0 z-50"
-          showAdmin={process.env.NODE_ENV === "development"}
-        />
-        {children}
-        <AppFooter className="" />
+        <DesignSystemProvider>
+          <AppHeader
+            className="sticky top-0 z-50"
+            showAdmin={process.env.NODE_ENV === "development"}
+          />
+          {children}
+          <AppFooter className="" />
 
-        <Toaster />
-        <AbstractedShapes />
-        <SpeedInsights />
+          <AbstractedShapes />
+          <SpeedInsights />
+          <Analytics />
+        </DesignSystemProvider>
       </body>
     </html>
   );

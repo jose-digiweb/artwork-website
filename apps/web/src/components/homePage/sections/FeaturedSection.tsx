@@ -73,6 +73,7 @@ export const FeaturedSection = ({ featuredArtworks, className }: Props) => {
                     alt={artwork.title}
                     width={600}
                     height={450}
+                    preserveTransformations={true}
                     quality="auto"
                     format="auto"
                     crop={{

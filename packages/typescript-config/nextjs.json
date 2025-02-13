@@ -12,7 +12,6 @@
     "paths": {
       "@/*": ["./*"],
       "@bangeyhodhy/*": ["../../packages/*"],
-      "content-collections": ["./.content-collections/generated"]
     }
   },
   "exclude": ["node_modules"]
