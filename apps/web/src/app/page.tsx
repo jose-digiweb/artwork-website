@@ -6,7 +6,7 @@ import { AppPage } from "@/components/utils";
 /**
  * The Home component
  * @description A component that displays the home page
- * @returns {React.ReactNode} The Home component
+ * @returns {React.ReactNode} The Home component to render
  */
 export default async function HomePage() {
   const featuredArtworks = await apiClient.artwork.getFeaturedArtworks();
