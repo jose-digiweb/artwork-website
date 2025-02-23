@@ -27,6 +27,7 @@ export const CloudinaryUploadButton = ({ onSuccess }: Props) => {
       options={{
         maxFiles: 10,
         multiple: true,
+        folder: "bange-artworks",
         sources: ["local", "unsplash"],
       }}
       signatureEndpoint={process.env.NEXT_PUBLIC_CLOUDINARY_SIGNATURE_ENDPOINT}
