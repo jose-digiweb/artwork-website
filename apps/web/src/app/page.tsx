@@ -4,7 +4,7 @@ import * as Home from "@/components/homePage";
 import { AppPage } from "@/components/utils";
 
 /**
- * The Home component
+ * The Home component.
  * @description A component that displays the home page
  * @returns {React.ReactNode} The Home component to render
  */
